@@ -162,27 +162,50 @@ export function BeforeAfterSlider({
           <div
             className="rounded-sm flex items-center justify-center"
             style={{
-              width: 32,
-              height: 18,
+              width: 40,
+              height: 16,
               background: "linear-gradient(180deg, #e8e0d0 0%, #c8b89a 50%, #b8a882 100%)",
               boxShadow: "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2)",
             }}
           >
             <div className="w-full border-t border-[rgba(0,0,0,0.15)]" />
           </div>
-          {/* Brush bristles */}
-          <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "rotate(-28deg)" }}>
-            <path d="M8 0 C8 12, 2 20, 4 30 C5 36, 12 42, 18 42 C24 42, 31 36, 32 30 C34 20, 28 12, 28 0 Z"
-              fill="url(#bristle-grad)" />
-            <path d="M12 3 C12 14, 8 22, 10 32 C11 38, 14 41, 18 41"
-              stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
-            <path d="M24 3 C24 14, 28 22, 26 32 C25 38, 22 41, 18 41"
-              stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" />
+          {/* Sash brush bristles — wide and flat */}
+          <svg width="44" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Bristle base rectangle */}
+            <rect x="2" y="0" width="40" height="4" fill="#c9b8a0" rx="1" />
+            {/* Left bristle group */}
+            <path d="M 8 4 Q 6 8, 5 14 Q 4 20, 6 28 Q 7 31, 8 32"
+              fill="url(#sash-grad-left)" />
+            <path d="M 12 4 Q 10 9, 9 16 Q 8 23, 10 30 Q 11 31, 12 32"
+              fill="url(#sash-grad-left)" />
+            {/* Center bristle group */}
+            <path d="M 16 4 Q 14 10, 13 18 Q 12 26, 14 32"
+              fill="url(#sash-grad-center)" />
+            <path d="M 22 4 Q 24 10, 25 18 Q 26 26, 24 32"
+              fill="url(#sash-grad-center)" />
+            {/* Right bristle group */}
+            <path d="M 32 4 Q 34 9, 35 16 Q 36 23, 34 30 Q 33 31, 32 32"
+              fill="url(#sash-grad-right)" />
+            <path d="M 36 4 Q 38 8, 39 14 Q 40 20, 38 28 Q 37 31, 36 32"
+              fill="url(#sash-grad-right)" />
+            {/* Highlight on bristles */}
+            <ellipse cx="18" cy="16" rx="6" ry="10" fill="rgba(255,255,255,0.2)" />
             <defs>
-              <linearGradient id="bristle-grad" x1="0" y1="0" x2="36" y2="42" gradientUnits="userSpaceOnUse">
+              <linearGradient id="sash-grad-left" x1="0" y1="0" x2="0" y2="32">
+                <stop offset="0%" stopColor="#5a9acc" />
+                <stop offset="50%" stopColor="#3d7aa8" />
+                <stop offset="100%" stopColor="#2d5f8f" />
+              </linearGradient>
+              <linearGradient id="sash-grad-center" x1="0" y1="0" x2="0" y2="32">
                 <stop offset="0%" stopColor="#4a90c4" />
-                <stop offset="40%" stopColor="#2d6ea8" />
+                <stop offset="50%" stopColor="#2d6ea8" />
                 <stop offset="100%" stopColor="#1a4f7a" />
+              </linearGradient>
+              <linearGradient id="sash-grad-right" x1="0" y1="0" x2="0" y2="32">
+                <stop offset="0%" stopColor="#3d7faa" />
+                <stop offset="50%" stopColor="#2a5a8a" />
+                <stop offset="100%" stopColor="#1a3f66" />
               </linearGradient>
             </defs>
           </svg>
