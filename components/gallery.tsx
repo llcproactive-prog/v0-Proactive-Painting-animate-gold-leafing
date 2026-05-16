@@ -60,6 +60,16 @@ const interiorSlider = {
   afterLabel: "Dining Room",
 }
 
+const exteriorHouseTransform = {
+  beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7851-UVMuY7cvtJxjrAwAPIMwbKkq9FWFaD.jpeg",
+  afterSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0509-iJXASF4JFjMEpKb809ZsBI6MQXvG2S.jpeg",
+  beforeAlt: "Two-story home with sage green exterior, white trim, and green garage door",
+  afterAlt: "Same home repainted crisp white exterior with white trim and white garage door",
+  label: "Whole Home Exterior",
+  beforeLabel: "Sage Green",
+  afterLabel: "Crisp White",
+}
+
 const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]", "rotate-1"]
 
 function PhotoTile({ photo, index }: { photo: typeof photos[0]; index: number }) {
@@ -160,6 +170,18 @@ export function Gallery() {
 
           <Reveal delay={300}>
             <BeforeAfterSlider
+              beforeSrc={exteriorHouseTransform.beforeSrc}
+              afterSrc={exteriorHouseTransform.afterSrc}
+              beforeAlt={exteriorHouseTransform.beforeAlt}
+              afterAlt={exteriorHouseTransform.afterAlt}
+              label={exteriorHouseTransform.label}
+              beforeLabel={exteriorHouseTransform.beforeLabel}
+              afterLabel={exteriorHouseTransform.afterLabel}
+            />
+          </Reveal>
+
+          <Reveal delay={420}>
+            <BeforeAfterSlider
               beforeSrc={exteriorStaining.beforeSrc}
               afterSrc={exteriorStaining.afterSrc}
               beforeAlt={exteriorStaining.beforeAlt}
@@ -170,21 +192,11 @@ export function Gallery() {
             />
           </Reveal>
 
-          <Reveal delay={360}>
-            <BeforeAfterSlider
-              beforeSrc={doorStaining.beforeSrc}
-              afterSrc={doorStaining.afterSrc}
-              beforeAlt={doorStaining.beforeAlt}
-              afterAlt={doorStaining.afterAlt}
-              label={doorStaining.label}
-            />
-          </Reveal>
-
-          <Reveal delay={420}>
+          <Reveal delay={480}>
             <VideoTile />
           </Reveal>
 
-          <Reveal delay={480}>
+          <Reveal delay={540}>
             <PhotoTile photo={photos[4]} index={4} />
           </Reveal>
         </div>
