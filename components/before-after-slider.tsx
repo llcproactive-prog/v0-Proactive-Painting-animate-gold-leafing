@@ -8,6 +8,8 @@ interface BeforeAfterSliderProps {
   beforeAlt: string
   afterAlt: string
   label?: string
+  beforeLabel?: string
+  afterLabel?: string
 }
 
 export function BeforeAfterSlider({
@@ -16,6 +18,8 @@ export function BeforeAfterSlider({
   beforeAlt,
   afterAlt,
   label = "Before / After",
+  beforeLabel = "Before",
+  afterLabel = "After",
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
@@ -104,10 +108,10 @@ export function BeforeAfterSlider({
 
       {/* Labels */}
       <div className="absolute top-3 left-3 bg-[rgba(58,52,44,0.85)] text-[#f8f3e9] px-2.5 py-1 text-[10px] tracking-widest uppercase font-bold rounded-full z-10">
-        Before
+        {beforeLabel}
       </div>
       <div className="absolute top-3 right-3 bg-[rgba(110,125,94,0.95)] text-[#f8f3e9] px-2.5 py-1 text-[10px] tracking-widest uppercase font-bold rounded-full z-10">
-        After
+        {afterLabel}
       </div>
 
       {/* Bottom label */}

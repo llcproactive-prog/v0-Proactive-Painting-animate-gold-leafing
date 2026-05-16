@@ -32,6 +32,16 @@ const doorStaining = {
   label: "Door Staining",
 }
 
+const interiorSlider = {
+  beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3126-57pDbLdUJeHeTDgrkzCTkbmNnTc6kJ.jpeg",
+  afterSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3127-21ifrnlnYHRs1IdG6rYSnc1vKxdq5G.jpeg",
+  beforeAlt: "Interior living room painted blue-grey with white crown molding and hardwood floors",
+  afterAlt: "Interior dining room painted blue-grey with white crown molding and crystal chandelier",
+  label: "Interior Painting",
+  beforeLabel: "Living Room",
+  afterLabel: "Dining Room",
+}
+
 const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]"]
 
 export function Gallery() {
@@ -63,8 +73,21 @@ export function Gallery() {
             </Reveal>
           ))}
 
-          {/* Before/After slider for door staining */}
+          {/* Interior slider */}
           <Reveal delay={180}>
+            <BeforeAfterSlider
+              beforeSrc={interiorSlider.beforeSrc}
+              afterSrc={interiorSlider.afterSrc}
+              beforeAlt={interiorSlider.beforeAlt}
+              afterAlt={interiorSlider.afterAlt}
+              label={interiorSlider.label}
+              beforeLabel={interiorSlider.beforeLabel}
+              afterLabel={interiorSlider.afterLabel}
+            />
+          </Reveal>
+
+          {/* Before/After slider for door staining */}
+          <Reveal delay={240}>
             <BeforeAfterSlider
               beforeSrc={doorStaining.beforeSrc}
               afterSrc={doorStaining.afterSrc}
@@ -75,7 +98,7 @@ export function Gallery() {
           </Reveal>
 
           {/* Last photo - deck staining */}
-          <Reveal delay={240}>
+          <Reveal delay={300}>
             <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[3]}`}>
               <img
                 src={photos[3].src}
