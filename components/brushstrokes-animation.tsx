@@ -2,23 +2,36 @@
 
 import { useEffect, useRef } from "react"
 
-interface Brushstroke {
+interface PaintWash {
   x: number
   y: number
-  length: number
-  angle: number
+  vx: number
+  vy: number
+  width: number
+  height: number
+  opacity: number
+  color: string
+  flowScale: number
+  time: number
+  duration: number
+}
+
+interface PaintDrip {
+  x: number
+  y: number
+  vy: number
   width: number
   opacity: number
   color: string
-  flowOffset: number
-  flowSpeed: number
-  waveAmplitude: number
-  waveFrequency: number
+  dripped: number
+  poolSize: number
+  startTime: number
 }
 
 export function BrushstrokesAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const strokesRef = useRef<Brushstroke[]>([])
+  const washesRef = useRef<PaintWash[]>([])
+  const dripsRef = useRef<PaintDrip[]>([])
   const animationRef = useRef<number>(0)
 
   useEffect(() => {
@@ -28,7 +41,6 @@ export function BrushstrokesAnimation() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -36,90 +48,152 @@ export function BrushstrokesAnimation() {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // Initialize brushstrokes with continuous flow paths
-    const strokeCount = 16
-    strokesRef.current = Array.from({ length: strokeCount }, (_, i) => createBrushstroke(i, strokeCount))
+    // Brand colors
+    const colors = ["#c97954", "#d4af37", "#6e7d5e", "#e8b4a8"]
 
-    function createBrushstroke(index: number, total: number): Brushstroke {
-      const startY = (index / total) * canvas.height
+    // Initialize layered watercolor washes
+    washesRef.current = Array.from({ length: 12 }, (_, i) =>
+      createWash(i)
+    )
+
+    function createWash(index: number): PaintWash {
       return {
-        x: -300,
-        y: startY + Math.sin(index * 0.5) * 100,
-        length: Math.random() * 180 + 200,
-        angle: Math.random() * 0.3 - 0.15,
-        width: Math.random() * 10 + 6,
-        opacity: Math.random() * 0.2 + 0.08,
-        color: Math.random() > 0.5 ? "#c97954" : "#d4af37",
-        flowOffset: 0,
-        flowSpeed: Math.random() * 1.5 + 0.8,
-        waveAmplitude: Math.random() * 60 + 40,
-        waveFrequency: Math.random() * 0.008 + 0.004,
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.15,
+        vy: (Math.random() - 0.5) * 0.1,
+        width: Math.random() * 300 + 200,
+        height: Math.random() * 200 + 150,
+        opacity: Math.random() * 0.08 + 0.02,
+        color: colors[index % colors.length],
+        flowScale: Math.random() * 0.5 + 0.5,
+        time: Math.random() * Math.PI * 2,
+        duration: Math.random() * 8000 + 10000,
       }
     }
 
-    function drawBrushstroke(ctx: CanvasRenderingContext2D, stroke: Brushstroke, time: number) {
+    function createDrip(x: number, y: number, color: string): PaintDrip {
+      return {
+        x: x + (Math.random() - 0.5) * 50,
+        y: y,
+        vy: Math.random() * 0.8 + 0.3,
+        width: Math.random() * 20 + 12,
+        opacity: Math.random() * 0.15 + 0.08,
+        color: color,
+        dripped: 0,
+        poolSize: Math.random() * 60 + 40,
+        startTime: Date.now(),
+      }
+    }
+
+    function drawWash(ctx: CanvasRenderingContext2D, wash: PaintWash, time: number) {
+      const progress = (time % wash.duration) / wash.duration
+      const wobble = Math.sin(time * 0.0003) * 30
+
       ctx.save()
-      ctx.globalAlpha = stroke.opacity
-      ctx.strokeStyle = stroke.color
-      ctx.lineWidth = stroke.width
+      ctx.globalAlpha = wash.opacity * (0.5 + Math.sin(progress * Math.PI * 2) * 0.3)
+      ctx.fillStyle = wash.color
+
+      // Create organic wash shape with multiple bezier curves
+      ctx.beginPath()
+      ctx.ellipse(
+        wash.x + wobble,
+        wash.y,
+        wash.width * wash.flowScale,
+        wash.height,
+        progress * Math.PI * 0.5,
+        0,
+        Math.PI * 2
+      )
+      ctx.fill()
+
+      // Add secondary wash layer for depth
+      ctx.globalAlpha = (wash.opacity * 0.4) * (0.5 + Math.sin((progress + 0.5) * Math.PI * 2) * 0.3)
+      ctx.beginPath()
+      ctx.ellipse(
+        wash.x + wobble * 0.7,
+        wash.y + 50,
+        wash.width * wash.flowScale * 0.7,
+        wash.height * 0.6,
+        progress * Math.PI * 0.3,
+        0,
+        Math.PI * 2
+      )
+      ctx.fill()
+
+      ctx.restore()
+    }
+
+    function drawDrip(ctx: CanvasRenderingContext2D, drip: PaintDrip) {
+      ctx.save()
+      ctx.globalAlpha = drip.opacity
+      ctx.fillStyle = drip.color
       ctx.lineCap = "round"
       ctx.lineJoin = "round"
 
-      // Calculate wave motion for vertical oscillation
-      const waveY = Math.sin(time * stroke.waveFrequency) * stroke.waveAmplitude
-
+      // Main drip body
       ctx.beginPath()
-      ctx.moveTo(stroke.x, stroke.y + waveY)
-      ctx.lineTo(
-        stroke.x + Math.cos(stroke.angle) * stroke.length,
-        stroke.y + waveY + Math.sin(stroke.angle) * stroke.length
-      )
-      ctx.stroke()
+      ctx.ellipse(drip.x, drip.y, drip.width * 0.5, drip.dripped, 0.2, 0, Math.PI * 2)
+      ctx.fill()
 
-      // Add highlight stroke for shimmer
-      ctx.globalAlpha = stroke.opacity * 0.4
-      ctx.lineWidth = stroke.width * 0.4
-      ctx.strokeStyle = "#fef5e7"
+      // Pool at bottom
+      ctx.globalAlpha = drip.opacity * 0.5
       ctx.beginPath()
-      ctx.moveTo(stroke.x + 1, stroke.y + 1 + waveY)
-      ctx.lineTo(
-        stroke.x + 1 + Math.cos(stroke.angle) * stroke.length * 0.8,
-        stroke.y + 1 + waveY + Math.sin(stroke.angle) * stroke.length * 0.8
-      )
-      ctx.stroke()
+      ctx.ellipse(drip.x, drip.y + drip.dripped, drip.poolSize * 0.3, drip.poolSize * 0.15, 0, 0, Math.PI * 2)
+      ctx.fill()
 
       ctx.restore()
     }
 
     function animate(time: number) {
-      // Clear canvas with very subtle fade
-      ctx.fillStyle = "rgba(248, 243, 233, 0.01)"
+      // Subtle fade for trail effect
+      ctx.fillStyle = "rgba(248, 243, 233, 0.003)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      // Update and draw brushstrokes
-      strokesRef.current.forEach((stroke) => {
-        // Continuous horizontal flow
-        stroke.flowOffset += stroke.flowSpeed
-        stroke.x = (stroke.flowOffset % (canvas.width + 600)) - 300
+      // Draw and update watercolor washes
+      washesRef.current.forEach((wash) => {
+        // Slow drifting motion
+        wash.x += wash.vx
+        wash.y += wash.vy
+        wash.time += 0.5
 
-        drawBrushstroke(ctx, stroke, time)
+        // Wrap around edges
+        if (wash.x > canvas.width + wash.width) wash.x = -wash.width
+        if (wash.x < -wash.width) wash.x = canvas.width + wash.width
+        if (wash.y > canvas.height + wash.height) wash.y = -wash.height
+        if (wash.y < -wash.height) wash.y = canvas.height + wash.height
 
-        // Reset when stroke flows off screen
-        if (stroke.x > canvas.width + 100) {
-          stroke.flowOffset = -300
+        drawWash(ctx, wash, wash.time)
+      })
+
+      // Occasionally spawn new drips
+      if (Math.random() > 0.98) {
+        const wash = washesRef.current[Math.floor(Math.random() * washesRef.current.length)]
+        dripsRef.current.push(
+          createDrip(
+            wash.x + (Math.random() - 0.5) * wash.width,
+            wash.y,
+            wash.color
+          )
+        )
+      }
+
+      // Draw and update drips
+      dripsRef.current = dripsRef.current.filter((drip) => {
+        const elapsed = Date.now() - drip.startTime
+        if (elapsed < 2000) {
+          drip.dripped += drip.vy
+          drip.y += drip.vy * 0.5
+          drawDrip(ctx, drip)
+          return true
         }
+        return false
       })
 
       animationRef.current = requestAnimationFrame(animate)
     }
 
-    let startTime = Date.now()
-    const animationLoop = () => {
-      const elapsed = Date.now() - startTime
-      animate(elapsed)
-    }
-
-    animationLoop()
+    animate()
 
     return () => {
       window.removeEventListener("resize", resizeCanvas)
@@ -131,7 +205,7 @@ export function BrushstrokesAnimation() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.7 }}
       aria-hidden="true"
     />
   )
