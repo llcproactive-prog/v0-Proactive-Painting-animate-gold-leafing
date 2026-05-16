@@ -2,7 +2,7 @@ import { Reveal } from "./reveal"
 
 export function Story() {
   return (
-    <section id="story" className="py-[100px] bg-[#f0e8d8]">
+    <section id="story" className="py-20 bg-[#f0e8d8]">
       <div className="max-w-[780px] mx-auto text-center px-7">
         <Reveal>
           <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-3 block">our story</span>

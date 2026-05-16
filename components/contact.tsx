@@ -17,10 +17,10 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#6e7d5e] text-[#f8f3e9] py-[110px] pb-20 relative overflow-hidden">
+    <section id="contact" className="bg-[#6e7d5e] text-[#f8f3e9] py-24 pb-16 relative overflow-hidden">
       <div className="absolute -top-[150px] -left-[150px] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(201,121,84,0.25),transparent_70%)] rounded-full" />
 
-      <div className="max-w-[1180px] mx-auto px-7 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 relative">
+      <div className="max-w-[1180px] mx-auto px-7 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 relative">
         <div>
           <span className="font-[var(--font-caveat)] text-2xl text-[#f0c9a8] mb-2 block">get in touch</span>
           <h2 className="font-[var(--font-fraunces)] text-[clamp(36px,5vw,60px)] leading-tight tracking-tight font-normal mb-6">

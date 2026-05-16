@@ -23,9 +23,9 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section id="reviews" className="py-[120px]">
+    <section id="reviews" className="py-24">
       <div className="max-w-[1180px] mx-auto px-7">
-        <Reveal className="text-center mb-14">
+        <Reveal className="text-center mb-12">
           <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-2 block">kind words</span>
           <h2 className="font-[var(--font-fraunces)] text-[clamp(34px,5vw,58px)] font-normal leading-tight tracking-tight text-balance">
             From our <em className="italic text-[#6e7d5e]">neighbors.</em>

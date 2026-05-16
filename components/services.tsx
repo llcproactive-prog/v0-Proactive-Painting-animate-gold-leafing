@@ -27,9 +27,9 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-[110px] pb-20">
+    <section id="services" className="py-24 pb-16">
       <div className="max-w-[1180px] mx-auto px-7">
-        <Reveal className="text-center mb-14">
+        <Reveal className="text-center mb-12">
           <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-2 block">what we do</span>
           <h2 className="font-[var(--font-fraunces)] text-[clamp(34px,5vw,58px)] font-normal leading-tight tracking-tight text-balance">
             Three things, done <em className="italic text-[#6e7d5e]">well.</em>

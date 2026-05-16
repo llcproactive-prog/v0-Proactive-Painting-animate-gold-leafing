@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <header className="py-[70px] pb-[90px] relative">
+    <header className="py-16 pb-20 relative">
       <div className="max-w-[1180px] mx-auto px-7 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-[60px] items-center">
           <div>
