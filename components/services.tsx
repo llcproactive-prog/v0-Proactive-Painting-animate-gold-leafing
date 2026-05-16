@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Reveal } from "./reveal"
+import { BeforeAfterSlider } from "./before-after-slider"
 
 const services = [
   {
@@ -7,7 +8,7 @@ const services = [
     title: "Interior",
     description:
       "Walls, trim, ceilings, doors, cabinets. Careful prep, low-VOC options, furniture moved and protected like it's our own.",
-    gradient: "from-[#e8d9bc] via-[#c4a87a] to-[#8a6f48]",
+    type: "slider",
   },
   {
     number: "no. 02",
@@ -15,6 +16,7 @@ const services = [
     description:
       "Stucco, siding, decks, fences. Pressure wash, scrape, prime, finish. Bay Area weather can be tough on a house — we plan for it.",
     gradient: "from-[#c8d2bd] via-[#9caa8c] to-[#6e7d5e]",
+    type: "gradient",
   },
   {
     number: "no. 03",
@@ -22,6 +24,7 @@ const services = [
     description:
       "Whole-home repaints, single rooms, accent walls, color consultation. We'll help you pick colors you'll love living with.",
     gradient: "from-[#f0d8c4] via-[#c97954] to-[#8a4528]",
+    type: "gradient",
   },
 ]
 
@@ -44,12 +47,27 @@ export function Services() {
                 className="bg-[#f8f3e9] border border-[rgba(58,52,44,0.14)] rounded-lg p-8 no-underline text-[#3a342c] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(58,52,44,0.2)] hover:border-[#9caa8c] group"
               >
                 <div className="aspect-[4/3] rounded mb-6 relative overflow-hidden">
-                  <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
-                    Swap Image
-                  </div>
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${service.gradient} transition-transform duration-500 group-hover:scale-105`}
-                  />
+                  {service.type === "slider" ? (
+                    <div className="absolute inset-0 rounded overflow-hidden">
+                      <BeforeAfterSlider
+                        beforeSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3126-57pDbLdUJeHeTDgrkzCTkbmNnTc6kJ.jpeg"
+                        afterSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3127-21ifrnlnYHRs1IdG6rYSnc1vKxdq5G.jpeg"
+                        beforeAlt="Interior living room painted blue-grey with white crown molding"
+                        afterAlt="Interior dining room painted blue-grey with white crown molding and crystal chandelier"
+                        beforeLabel="Living Room"
+                        afterLabel="Dining Room"
+                      />
+                    </div>
+                  ) : (
+                    <>
+                      <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
+                        Swap Image
+                      </div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${service.gradient} transition-transform duration-500 group-hover:scale-105`}
+                      />
+                    </>
+                  )}
                 </div>
                 <span className="font-[var(--font-caveat)] text-[22px] text-[#c97954] mb-1">
                   {service.number}
