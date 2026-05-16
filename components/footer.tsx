@@ -19,10 +19,10 @@ export function Footer() {
             (408) 516-7750
           </a>
           <a
-            href="mailto:llcproactive@gmail.com"
+            href="mailto:proactivepaintingsv@gmail.com"
             className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#2DD4BF] transition-colors"
           >
-            llcproactive@gmail.com
+            proactivepaintingsv@gmail.com
           </a>
           <Link
             href="#contact"

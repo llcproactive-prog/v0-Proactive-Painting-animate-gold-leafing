@@ -50,10 +50,10 @@ export function Contact() {
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">Email</span>
             <a
-              href="mailto:llcproactive@gmail.com"
+              href="mailto:proactivepaintingsv@gmail.com"
               className="text-[#f8f3e9] no-underline font-[var(--font-dm-serif)] text-lg hover:text-[#2DD4BF] transition-colors"
             >
-              llcproactive@gmail.com
+              proactivepaintingsv@gmail.com
             </a>
           </div>
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
