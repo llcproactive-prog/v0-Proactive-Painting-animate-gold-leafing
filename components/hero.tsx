@@ -26,7 +26,7 @@ export function Hero() {
             <div className="flex gap-4 items-center flex-wrap">
               <Link
                 href="#contact"
-                className="bg-[#D4AF37] text-[#f8f3e9] px-8 py-4 rounded-full no-underline font-semibold text-base hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all inline-flex items-center gap-2.5"
+                className="btn-glow bg-[#D4AF37] text-[#f8f3e9] px-8 py-4 rounded-full no-underline font-semibold text-base hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all inline-flex items-center gap-2.5"
               >
                 Get a Free Quote →
               </Link>

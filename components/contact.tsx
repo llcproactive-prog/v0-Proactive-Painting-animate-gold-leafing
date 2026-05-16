@@ -170,7 +170,7 @@ export function Contact() {
           <button
             type="button"
             onClick={handleSubmit}
-            className="w-full bg-[#D4AF37] text-[#f8f3e9] border-none py-4 text-base font-bold cursor-pointer mt-2 rounded-full hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all"
+            className="btn-glow w-full bg-[#D4AF37] text-[#f8f3e9] border-none py-4 text-base font-bold cursor-pointer mt-2 rounded-full hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all"
           >
             Send it →
           </button>

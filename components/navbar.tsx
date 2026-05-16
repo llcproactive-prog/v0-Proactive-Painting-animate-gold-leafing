@@ -45,7 +45,7 @@ export function Navbar() {
           </Link>
           <Link
             href="#contact"
-            className="bg-[#D4AF37] text-[#f8f3e9] px-5 py-2.5 rounded-full font-semibold hover:bg-[#b8922f] transition-colors"
+            className="btn-glow bg-[#D4AF37] text-[#f8f3e9] px-5 py-2.5 rounded-full font-semibold hover:bg-[#b8922f] transition-colors"
           >
             Get a Quote
           </Link>
