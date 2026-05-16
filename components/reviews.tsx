@@ -28,7 +28,7 @@ export function Reviews() {
         <Reveal className="text-center mb-12">
           <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-2 block">kind words</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
-            From our <em className="italic text-[#6e7d5e]">neighbors.</em>
+            From our <em className="text-[#6e7d5e]">neighbors.</em>
           </h2>
         </Reveal>
 

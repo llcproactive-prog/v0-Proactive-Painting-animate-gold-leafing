@@ -7,7 +7,7 @@ export function Story() {
         <Reveal>
           <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-3 block">our story</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(32px,4.5vw,52px)] font-normal leading-relaxed tracking-tight mb-8 text-balance">
-            A small business with <em className="italic text-[#c97954]">big care</em> for every home we paint.
+            A small business with <em className="text-[#c97954]">big care</em> for every home we paint.
           </h2>
           <div className="text-lg leading-relaxed text-[#5e564a] space-y-6">
             <p>
@@ -21,7 +21,7 @@ export function Story() {
             </p>
           </div>
           <div className="mt-10 inline-flex flex-col items-center">
-            <div className="font-[var(--font-instrument)] text-[38px] text-[#3a342c] leading-none -rotate-3">
+            <div className="font-[var(--font-instrument)] text-[38px] text-[#3a342c] leading-none">
               — Raymond Gil
             </div>
             <div className="text-[13px] tracking-[0.15em] uppercase text-[#5e564a] mt-3">

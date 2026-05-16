@@ -70,7 +70,7 @@ const exteriorHouseTransform = {
   afterLabel: "Crisp White",
 }
 
-const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]", "rotate-1"]
+const rotations = ["", "", "", "", ""]
 
 function PhotoTile({ photo, index }: { photo: typeof photos[0]; index: number }) {
   return (
@@ -145,7 +145,7 @@ export function Gallery() {
         <Reveal className="text-center mb-10">
           <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-1 block">recent work</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
-            A few <em className="italic text-[#6e7d5e]">homes</em> we&apos;ve loved.
+            A few <em className="text-[#6e7d5e]">homes</em> we&apos;ve loved.
           </h2>
         </Reveal>
 

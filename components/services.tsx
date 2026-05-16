@@ -99,7 +99,7 @@ export function Services() {
         <Reveal className="text-center mb-12">
           <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-2 block">what we do</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
-            Three things, done <em className="italic text-[#6e7d5e]">well.</em>
+            Three things, done <em className="text-[#6e7d5e]">well.</em>
           </h2>
         </Reveal>
 

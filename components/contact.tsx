@@ -25,7 +25,7 @@ export function Contact() {
           <span className="font-[var(--font-instrument)] text-2xl text-[#f0c9a8] mb-2 block">get in touch</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(36px,5vw,60px)] leading-relaxed tracking-tight font-normal mb-6">
             Let&apos;s{" "}
-            <span className="font-[var(--font-instrument)] font-bold text-[#f0c9a8] -rotate-2 inline-block text-[1.05em]">
+            <span className="font-[var(--font-instrument)] font-bold text-[#f0c9a8] inline-block text-[1.05em]">
               talk
             </span>{" "}
             about your home.
