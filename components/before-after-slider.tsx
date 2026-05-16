@@ -160,9 +160,10 @@ export function BeforeAfterSlider({
         >
           {/* Brush ferrule (metal band) */}
           <div
-            className="w-6 rounded-sm flex items-center justify-center"
+            className="rounded-sm flex items-center justify-center"
             style={{
-              height: 14,
+              width: 32,
+              height: 18,
               background: "linear-gradient(180deg, #e8e0d0 0%, #c8b89a 50%, #b8a882 100%)",
               boxShadow: "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2)",
             }}
@@ -170,15 +171,15 @@ export function BeforeAfterSlider({
             <div className="w-full border-t border-[rgba(0,0,0,0.15)]" />
           </div>
           {/* Brush bristles */}
-          <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 0 C4 8, 1 14, 3 20 C4 24, 8 28, 11 28 C14 28, 18 24, 19 20 C21 14, 18 8, 18 0 Z"
+          <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "rotate(-28deg)" }}>
+            <path d="M8 0 C8 12, 2 20, 4 30 C5 36, 12 42, 18 42 C24 42, 31 36, 32 30 C34 20, 28 12, 28 0 Z"
               fill="url(#bristle-grad)" />
-            <path d="M7 2 C7 9, 5 15, 6 21 C7 25, 9 27, 11 27"
-              stroke="rgba(255,255,255,0.3)" strokeWidth="0.8" />
-            <path d="M14 2 C14 9, 16 15, 15 21 C14 25, 12 27, 11 27"
-              stroke="rgba(0,0,0,0.15)" strokeWidth="0.8" />
+            <path d="M12 3 C12 14, 8 22, 10 32 C11 38, 14 41, 18 41"
+              stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
+            <path d="M24 3 C24 14, 28 22, 26 32 C25 38, 22 41, 18 41"
+              stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" />
             <defs>
-              <linearGradient id="bristle-grad" x1="0" y1="0" x2="22" y2="28" gradientUnits="userSpaceOnUse">
+              <linearGradient id="bristle-grad" x1="0" y1="0" x2="36" y2="42" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#4a90c4" />
                 <stop offset="40%" stopColor="#2d6ea8" />
                 <stop offset="100%" stopColor="#1a4f7a" />
