@@ -2,36 +2,20 @@
 
 import { useEffect, useRef } from "react"
 
-interface PaintWash {
-  x: number
-  y: number
-  vx: number
-  vy: number
-  width: number
-  height: number
-  opacity: number
+interface ScribblePath {
+  points: { x: number; y: number }[]
   color: string
-  flowScale: number
-  time: number
-  duration: number
-}
-
-interface PaintDrip {
-  x: number
-  y: number
-  vy: number
-  width: number
+  lineWidth: number
   opacity: number
-  color: string
-  dripped: number
-  poolSize: number
-  startTime: number
+  progress: number
+  speed: number
+  startX: number
+  startY: number
 }
 
 export function BrushstrokesAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const washesRef = useRef<PaintWash[]>([])
-  const dripsRef = useRef<PaintDrip[]>([])
+  const scribbleRef = useRef<ScribblePath[]>([])
   const animationRef = useRef<number>(0)
 
   useEffect(() => {
@@ -51,144 +35,119 @@ export function BrushstrokesAnimation() {
     // Brand colors
     const colors = ["#c97954", "#d4af37", "#6e7d5e", "#e8b4a8"]
 
-    // Initialize layered watercolor washes
-    washesRef.current = Array.from({ length: 12 }, (_, i) =>
-      createWash(i)
-    )
+    function generateScribblePath(startX: number, startY: number): { x: number; y: number }[] {
+      const points: { x: number; y: number }[] = []
+      let x = startX
+      let y = startY
+      const segments = Math.floor(Math.random() * 30) + 40
+      const direction = Math.random() > 0.5 ? 1 : -1
 
-    function createWash(index: number): PaintWash {
+      for (let i = 0; i < segments; i++) {
+        points.push({ x, y })
+        
+        // Zigzag pattern moving horizontally with vertical oscillation
+        x += (Math.random() * 30 + 20) * direction
+        
+        // Alternating up/down for zigzag effect
+        const zigzag = (i % 2 === 0) ? -1 : 1
+        y += zigzag * (Math.random() * 60 + 40)
+        
+        // Add some curve variation
+        if (Math.random() > 0.7) {
+          y += (Math.random() - 0.5) * 30
+        }
+      }
+
+      return points
+    }
+
+    function createScribble(): ScribblePath {
+      const startX = Math.random() > 0.5 ? -100 : canvas.width + 100
+      const startY = Math.random() * canvas.height * 0.8 + canvas.height * 0.1
+
       return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.15,
-        vy: (Math.random() - 0.5) * 0.1,
-        width: Math.random() * 300 + 200,
-        height: Math.random() * 200 + 150,
-        opacity: Math.random() * 0.08 + 0.02,
-        color: colors[index % colors.length],
-        flowScale: Math.random() * 0.5 + 0.5,
-        time: Math.random() * Math.PI * 2,
-        duration: Math.random() * 8000 + 10000,
+        points: generateScribblePath(startX, startY),
+        color: colors[Math.floor(Math.random() * colors.length)],
+        lineWidth: Math.random() * 8 + 4,
+        opacity: Math.random() * 0.15 + 0.05,
+        progress: 0,
+        speed: Math.random() * 0.008 + 0.004,
+        startX,
+        startY,
       }
     }
 
-    function createDrip(x: number, y: number, color: string): PaintDrip {
-      return {
-        x: x + (Math.random() - 0.5) * 50,
-        y: y,
-        vy: Math.random() * 0.8 + 0.3,
-        width: Math.random() * 20 + 12,
-        opacity: Math.random() * 0.15 + 0.08,
-        color: color,
-        dripped: 0,
-        poolSize: Math.random() * 60 + 40,
-        startTime: Date.now(),
-      }
-    }
+    // Initialize with a few scribbles
+    scribbleRef.current = Array.from({ length: 4 }, () => createScribble())
 
-    function drawWash(ctx: CanvasRenderingContext2D, wash: PaintWash, time: number) {
-      const progress = (time % wash.duration) / wash.duration
-      const wobble = Math.sin(time * 0.0003) * 30
+    function drawScribble(ctx: CanvasRenderingContext2D, scribble: ScribblePath) {
+      if (scribble.points.length < 2) return
+
+      const pointsToDraw = Math.floor(scribble.points.length * scribble.progress)
+      if (pointsToDraw < 2) return
 
       ctx.save()
-      ctx.globalAlpha = wash.opacity * (0.5 + Math.sin(progress * Math.PI * 2) * 0.3)
-      ctx.fillStyle = wash.color
-
-      // Create organic wash shape with multiple bezier curves
-      ctx.beginPath()
-      ctx.ellipse(
-        wash.x + wobble,
-        wash.y,
-        wash.width * wash.flowScale,
-        wash.height,
-        progress * Math.PI * 0.5,
-        0,
-        Math.PI * 2
-      )
-      ctx.fill()
-
-      // Add secondary wash layer for depth
-      ctx.globalAlpha = (wash.opacity * 0.4) * (0.5 + Math.sin((progress + 0.5) * Math.PI * 2) * 0.3)
-      ctx.beginPath()
-      ctx.ellipse(
-        wash.x + wobble * 0.7,
-        wash.y + 50,
-        wash.width * wash.flowScale * 0.7,
-        wash.height * 0.6,
-        progress * Math.PI * 0.3,
-        0,
-        Math.PI * 2
-      )
-      ctx.fill()
-
-      ctx.restore()
-    }
-
-    function drawDrip(ctx: CanvasRenderingContext2D, drip: PaintDrip) {
-      ctx.save()
-      ctx.globalAlpha = drip.opacity
-      ctx.fillStyle = drip.color
+      ctx.globalAlpha = scribble.opacity
+      ctx.strokeStyle = scribble.color
+      ctx.lineWidth = scribble.lineWidth
       ctx.lineCap = "round"
       ctx.lineJoin = "round"
 
-      // Main drip body
+      // Draw the main scribble path
       ctx.beginPath()
-      ctx.ellipse(drip.x, drip.y, drip.width * 0.5, drip.dripped, 0.2, 0, Math.PI * 2)
-      ctx.fill()
+      ctx.moveTo(scribble.points[0].x, scribble.points[0].y)
 
-      // Pool at bottom
-      ctx.globalAlpha = drip.opacity * 0.5
+      for (let i = 1; i < pointsToDraw; i++) {
+        const prev = scribble.points[i - 1]
+        const curr = scribble.points[i]
+        
+        // Use quadratic curves for smoother lines
+        const midX = (prev.x + curr.x) / 2
+        const midY = (prev.y + curr.y) / 2
+        ctx.quadraticCurveTo(prev.x, prev.y, midX, midY)
+      }
+      ctx.stroke()
+
+      // Add highlight stroke for paint texture
+      ctx.globalAlpha = scribble.opacity * 0.4
+      ctx.lineWidth = scribble.lineWidth * 0.3
+      ctx.strokeStyle = "#fef5e7"
       ctx.beginPath()
-      ctx.ellipse(drip.x, drip.y + drip.dripped, drip.poolSize * 0.3, drip.poolSize * 0.15, 0, 0, Math.PI * 2)
-      ctx.fill()
+      ctx.moveTo(scribble.points[0].x + 2, scribble.points[0].y + 2)
+
+      for (let i = 1; i < pointsToDraw; i++) {
+        const prev = scribble.points[i - 1]
+        const curr = scribble.points[i]
+        const midX = (prev.x + curr.x) / 2
+        const midY = (prev.y + curr.y) / 2
+        ctx.quadraticCurveTo(prev.x + 2, prev.y + 2, midX + 2, midY + 2)
+      }
+      ctx.stroke()
 
       ctx.restore()
     }
 
-    function animate(time: number) {
-      // Subtle fade for trail effect
-      ctx.fillStyle = "rgba(248, 243, 233, 0.003)"
+    function animate() {
+      // Very subtle fade for trail persistence
+      ctx.fillStyle = "rgba(248, 243, 233, 0.008)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      // Draw and update watercolor washes
-      washesRef.current.forEach((wash) => {
-        // Slow drifting motion
-        wash.x += wash.vx
-        wash.y += wash.vy
-        wash.time += 0.5
+      // Update and draw scribbles
+      scribbleRef.current.forEach((scribble, index) => {
+        scribble.progress += scribble.speed
 
-        // Wrap around edges
-        if (wash.x > canvas.width + wash.width) wash.x = -wash.width
-        if (wash.x < -wash.width) wash.x = canvas.width + wash.width
-        if (wash.y > canvas.height + wash.height) wash.y = -wash.height
-        if (wash.y < -wash.height) wash.y = canvas.height + wash.height
+        drawScribble(ctx, scribble)
 
-        drawWash(ctx, wash, wash.time)
-      })
-
-      // Occasionally spawn new drips
-      if (Math.random() > 0.98) {
-        const wash = washesRef.current[Math.floor(Math.random() * washesRef.current.length)]
-        dripsRef.current.push(
-          createDrip(
-            wash.x + (Math.random() - 0.5) * wash.width,
-            wash.y,
-            wash.color
-          )
-        )
-      }
-
-      // Draw and update drips
-      dripsRef.current = dripsRef.current.filter((drip) => {
-        const elapsed = Date.now() - drip.startTime
-        if (elapsed < 2000) {
-          drip.dripped += drip.vy
-          drip.y += drip.vy * 0.5
-          drawDrip(ctx, drip)
-          return true
+        // Reset scribble when complete
+        if (scribble.progress >= 1) {
+          scribbleRef.current[index] = createScribble()
         }
-        return false
       })
+
+      // Occasionally add new scribble
+      if (Math.random() > 0.995 && scribbleRef.current.length < 8) {
+        scribbleRef.current.push(createScribble())
+      }
 
       animationRef.current = requestAnimationFrame(animate)
     }
@@ -205,7 +164,7 @@ export function BrushstrokesAnimation() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.7 }}
+      style={{ opacity: 0.85 }}
       aria-hidden="true"
     />
   )
