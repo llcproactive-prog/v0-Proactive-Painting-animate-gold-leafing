@@ -113,12 +113,12 @@ export function Services() {
                   {service.type === "slider" ? (
                     <div className="absolute inset-0 rounded overflow-hidden">
                       <BeforeAfterSlider
-                        beforeSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3126-57pDbLdUJeHeTDgrkzCTkbmNnTc6kJ.jpeg"
-                        afterSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3127-21ifrnlnYHRs1IdG6rYSnc1vKxdq5G.jpeg"
-                        beforeAlt="Interior living room painted blue-grey with white crown molding"
-                        afterAlt="Interior dining room painted blue-grey with white crown molding and crystal chandelier"
+                        beforeSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/482d3317-7274-46b8-aae7-5e64ad2af0e0.jpeg"
+                        afterSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e17b5972-c88c-4e7f-bac7-c63f61dc3f3e.jpeg"
+                        beforeAlt="Modern living room with cream walls, white furniture, and vaulted ceiling"
+                        afterAlt="Elegant bedroom with warm beige walls, white bedding, and hardwood floors"
                         beforeLabel="Living Room"
-                        afterLabel="Dining Room"
+                        afterLabel="Bedroom"
                       />
                     </div>
                   ) : service.type === "video" ? (
