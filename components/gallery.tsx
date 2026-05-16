@@ -32,7 +32,15 @@ const doorStaining = {
   label: "Door Staining",
 }
 
-const interiorSlider = {
+const exteriorStaining = {
+  beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8673-FpvpvhyuFyu7swSaKrYJzD05orVLm0.jpeg",
+  afterSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8673-FpvpvhyuFyu7swSaKrYJzD05orVLm0.jpeg",
+  beforeAlt: "Wooden structure with raw untreated wood showing before staining",
+  afterAlt: "Same wooden structure with rich dark reddish-brown stain finish",
+  label: "Exterior Staining",
+  beforeLabel: "Raw Wood",
+  afterLabel: "Stained",
+}
   beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3126-57pDbLdUJeHeTDgrkzCTkbmNnTc6kJ.jpeg",
   afterSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3127-21ifrnlnYHRs1IdG6rYSnc1vKxdq5G.jpeg",
   beforeAlt: "Interior living room painted blue-grey with white crown molding and hardwood floors",
@@ -86,8 +94,21 @@ export function Gallery() {
             />
           </Reveal>
 
-          {/* Before/After slider for door staining */}
+          {/* Exterior staining slider */}
           <Reveal delay={240}>
+            <BeforeAfterSlider
+              beforeSrc={exteriorStaining.beforeSrc}
+              afterSrc={exteriorStaining.afterSrc}
+              beforeAlt={exteriorStaining.beforeAlt}
+              afterAlt={exteriorStaining.afterAlt}
+              label={exteriorStaining.label}
+              beforeLabel={exteriorStaining.beforeLabel}
+              afterLabel={exteriorStaining.afterLabel}
+            />
+          </Reveal>
+
+          {/* Before/After slider for door staining */}
+          <Reveal delay={300}>
             <BeforeAfterSlider
               beforeSrc={doorStaining.beforeSrc}
               afterSrc={doorStaining.afterSrc}
@@ -98,7 +119,7 @@ export function Gallery() {
           </Reveal>
 
           {/* Last photo - deck staining */}
-          <Reveal delay={300}>
+          <Reveal delay={360}>
             <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[3]}`}>
               <img
                 src={photos[3].src}
