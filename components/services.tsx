@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
@@ -15,8 +17,8 @@ const services = [
     title: "Exterior",
     description:
       "Stucco, siding, decks, fences. Pressure wash, scrape, prime, finish. Bay Area weather can be tough on a house — we plan for it.",
-    gradient: "from-[#c8d2bd] via-[#9caa8c] to-[#6e7d5e]",
-    type: "gradient",
+    type: "video",
+    videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/534f45d1766e4506b7454e5960f7a6db-oMT9r8keJDk78b7Wo0lp3eYjQZMWVo.mp4",
   },
   {
     number: "no. 03",
@@ -58,6 +60,15 @@ export function Services() {
                         afterLabel="Dining Room"
                       />
                     </div>
+                  ) : service.type === "video" ? (
+                    <video
+                      src={service.videoSrc}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                   ) : (
                     <>
                       <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
