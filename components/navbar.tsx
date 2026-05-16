@@ -100,38 +100,49 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="md:hidden bg-[#f8f3e9] border-t border-[rgba(58,52,44,0.14)] px-7 py-4 flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200">
+      <div 
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-[#f8f3e9] border-t border-[rgba(58,52,44,0.14)] px-7 py-4 flex flex-col gap-1">
           <Link
             href="#story"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors py-2"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Our Story
           </Link>
           <Link
             href="#services"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors py-2"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Services
           </Link>
           <Link
             href="#work"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors py-2"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Work
           </Link>
           <Link
             href="#reviews"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors py-2"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3"
           >
             Reviews
           </Link>
+          <Link
+            href="tel:+14085167750"
+            onClick={closeMenu}
+            className="text-[#2D7D4A] no-underline text-[16px] font-semibold py-3 mt-2"
+          >
+            Call: (408) 516-7750
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   )
 }
