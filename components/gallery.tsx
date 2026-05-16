@@ -1,3 +1,5 @@
+"use client"
+
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
 
@@ -57,12 +59,52 @@ const interiorSlider = {
   afterLabel: "Dining Room",
 }
 
-const videoTile = {
-  src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8675_compressed-7joecMwQIi0wj4VllyNpL7lJLqzkn6.mp4",
-  label: "Project Timelapse",
+const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]", "rotate-1"]
+
+function PhotoTile({ photo, index }: { photo: typeof photos[0]; index: number }) {
+  return (
+    <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[index] ?? ""}`}>
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+        <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photo.label}</span>
+      </div>
+    </div>
+  )
 }
 
-const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]", "rotate-1"]
+function VideoTile() {
+  return (
+    <div className="relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group cursor-pointer">
+      <video
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8675_compressed-7joecMwQIi0wj4VllyNpL7lJLqzkn6.mp4"
+        className="absolute inset-0 w-full h-full object-cover"
+        muted
+        playsInline
+        onMouseEnter={(e) => e.currentTarget.play()}
+        onMouseLeave={(e) => {
+          e.currentTarget.pause()
+          e.currentTarget.currentTime = 0
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-14 h-14 bg-[rgba(248,243,233,0.9)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg className="w-6 h-6 text-[#3a342c] ml-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 p-3">
+        <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">Project Timelapse</span>
+      </div>
+    </div>
+  )
+}
 
 export function Gallery() {
   return (
@@ -76,24 +118,12 @@ export function Gallery() {
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-          {/* First four regular photos */}
           {photos.slice(0, 4).map((photo, i) => (
             <Reveal key={i} delay={i * 60}>
-              <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[i] ?? ""}`}>
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photo.label}</span>
-                </div>
-              </div>
+              <PhotoTile photo={photo} index={i} />
             </Reveal>
           ))}
 
-          {/* Interior slider */}
           <Reveal delay={240}>
             <BeforeAfterSlider
               beforeSrc={interiorSlider.beforeSrc}
@@ -106,7 +136,6 @@ export function Gallery() {
             />
           </Reveal>
 
-          {/* Exterior staining slider */}
           <Reveal delay={300}>
             <BeforeAfterSlider
               beforeSrc={exteriorStaining.beforeSrc}
@@ -119,7 +148,6 @@ export function Gallery() {
             />
           </Reveal>
 
-          {/* Before/After slider for door staining */}
           <Reveal delay={360}>
             <BeforeAfterSlider
               beforeSrc={doorStaining.beforeSrc}
@@ -130,46 +158,12 @@ export function Gallery() {
             />
           </Reveal>
 
-          {/* Video tile */}
-          <Reveal delay={480}>
-            <div className="relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group cursor-pointer">
-              <video
-                src={videoTile.src}
-                className="absolute inset-0 w-full h-full object-cover"
-                muted
-                playsInline
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => {
-                  e.currentTarget.pause()
-                  e.currentTarget.currentTime = 0
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-14 h-14 bg-[rgba(248,243,233,0.95)] rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-[#3a342c] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{videoTile.label}</span>
-              </div>
-            </div>
+          <Reveal delay={420}>
+            <VideoTile />
           </Reveal>
 
-          {/* Last photo - deck staining */}
-          <Reveal delay={540}>
-              <img
-                src={photos[4].src}
-                alt={photos[4].alt}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photos[4].label}</span>
-              </div>
-            </div>
+          <Reveal delay={480}>
+            <PhotoTile photo={photos[4]} index={4} />
           </Reveal>
         </div>
       </div>
