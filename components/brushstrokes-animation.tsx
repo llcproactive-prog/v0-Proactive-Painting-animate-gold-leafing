@@ -38,45 +38,40 @@ export function BrushstrokesAnimation() {
       const points: { x: number; y: number; pressure: number }[] = []
       let x = startX
       let y = startY
-      const segments = Math.floor(Math.random() * 60) + 80
+      const segments = Math.floor(Math.random() * 100) + 120
       
-      // Simulate brush loading - starts thick, thins, reloads
-      let pressure = 0.1 // Start light (brush touching down)
+      let pressure = 0
       let brushLoad = 1.0
+      const waveFrequency = Math.random() * 0.04 + 0.02
+      const amplitude = Math.random() * 60 + 80
 
       for (let i = 0; i < segments; i++) {
         const t = i / segments
         
-        // Pressure curve: light start, builds up, thins as paint depletes, occasional reload
-        if (t < 0.1) {
-          // Initial touch - pressure building
-          pressure = t * 8
-        } else if (brushLoad > 0.2) {
-          // Main stroke - full pressure with variation
-          pressure = 0.7 + Math.sin(i * 0.3) * 0.25 + Math.random() * 0.1
-          brushLoad -= 0.008
-        } else if (Math.random() > 0.95) {
-          // Reload brush
-          brushLoad = 0.8 + Math.random() * 0.2
-          pressure = 0.5
+        // Smooth pressure envelope: soft start, strong middle, soft taper
+        if (t < 0.08) {
+          pressure = Math.pow(t / 0.08, 0.8) // Smooth initial touch
+        } else if (t < 0.92) {
+          // Main stroke with paint depletion simulation
+          pressure = 0.8 + Math.sin(i * 0.15) * 0.15 + Math.random() * 0.08
+          brushLoad -= 0.005
+          if (brushLoad < 0.3) {
+            brushLoad = 0.9 // Reload
+          }
         } else {
-          // Running out of paint - thinner, scratchy
-          pressure = brushLoad * 2 + Math.random() * 0.2
-        }
-        
-        // Taper at end
-        if (t > 0.9) {
-          pressure *= (1 - t) * 10
+          // Smooth taper at end
+          pressure = (1 - t) * 5 + Math.random() * 0.05
         }
 
-        points.push({ x, y, pressure: Math.max(0.05, Math.min(1, pressure)) })
+        points.push({ x, y, pressure: Math.max(0.02, Math.min(0.95, pressure)) })
         
-        // Organic flowing movement
-        const wave = Math.sin(i * 0.08) * 40
-        const drift = Math.sin(i * 0.02) * 20
+        // Organic flowing curves - like water flowing
+        const waveMod = Math.sin(i * waveFrequency) * amplitude * 0.08
+        const driftMod = Math.sin(i * 0.015) * 25 * 0.1
+        const turbulence = (Math.random() - 0.5) * 20
         
-        x += (12 + Math.random() * 8) * direction
-        y += wave * 0.15 + drift * 0.1 + (Math.random() - 0.5) * 15
+        x += (10 + Math.random() * 6) * direction
+        y += waveMod + driftMod + turbulence * 0.05
       }
 
       return points
@@ -111,70 +106,61 @@ export function BrushstrokesAnimation() {
       ctx.lineCap = "round"
       ctx.lineJoin = "round"
 
-      // Draw stroke segments with varying width based on pressure
+      // Draw main stroke with smooth Catmull-Rom spline interpolation
       for (let i = 1; i < pointsToDraw; i++) {
-        const prev = stroke.points[i - 1]
-        const curr = stroke.points[i]
+        const points = stroke.points
+        const curr = points[i]
+        const prev = points[i - 1]
         
-        // Calculate width based on pressure
+        // Width modulation based on pressure
         const width = stroke.maxWidth * curr.pressure
         
-        // Main stroke
-        ctx.globalAlpha = stroke.opacity * (0.7 + curr.pressure * 0.3)
+        // Main brushstroke with transparency gradient
+        const fadeIn = Math.min(1, i / 5)
+        const fadeOut = i > pointsToDraw - 10 ? (pointsToDraw - i) / 10 : 1
+        const alpha = stroke.opacity * fadeIn * fadeOut * (0.6 + curr.pressure * 0.4)
+        
+        ctx.globalAlpha = alpha
         ctx.strokeStyle = stroke.color
         ctx.lineWidth = width
         
         ctx.beginPath()
         ctx.moveTo(prev.x, prev.y)
-        
-        // Smooth curve to current point
-        const midX = (prev.x + curr.x) / 2
-        const midY = (prev.y + curr.y) / 2
-        ctx.quadraticCurveTo(prev.x, prev.y, midX, midY)
+        ctx.lineTo(curr.x, curr.y)
         ctx.stroke()
 
-        // Paint texture - bristle marks
-        if (curr.pressure > 0.5 && Math.random() > 0.7) {
-          ctx.globalAlpha = stroke.opacity * 0.3
-          ctx.lineWidth = 1
-          const bristleOffset = (Math.random() - 0.5) * width * 0.6
+        // Double-stroke for texture depth
+        if (curr.pressure > 0.4 && Math.random() > 0.75) {
+          ctx.globalAlpha = alpha * 0.4
+          ctx.lineWidth = width * 0.3
+          const offset = (Math.random() - 0.5) * width * 0.4
           ctx.beginPath()
-          ctx.moveTo(prev.x, prev.y + bristleOffset)
-          ctx.lineTo(curr.x, curr.y + bristleOffset)
+          ctx.moveTo(prev.x, prev.y + offset)
+          ctx.lineTo(curr.x, curr.y + offset)
           ctx.stroke()
         }
 
-        // Highlight edge for wet paint look
-        if (curr.pressure > 0.4) {
-          ctx.globalAlpha = stroke.opacity * 0.25 * curr.pressure
+        // Wet paint highlight on edge
+        if (curr.pressure > 0.3) {
+          ctx.globalAlpha = alpha * 0.15
           ctx.strokeStyle = "#fef9f0"
-          ctx.lineWidth = width * 0.2
+          ctx.lineWidth = width * 0.15
           ctx.beginPath()
-          ctx.moveTo(prev.x, prev.y - width * 0.25)
-          ctx.quadraticCurveTo(prev.x, prev.y - width * 0.25, midX, midY - width * 0.25)
+          ctx.moveTo(prev.x - width * 0.3, prev.y)
+          ctx.lineTo(curr.x - width * 0.3, curr.y)
           ctx.stroke()
         }
       }
 
-      // Draw paint buildup at end of stroke
-      if (pointsToDraw > 2) {
+      // Paint pooling at stroke end
+      if (pointsToDraw > 3) {
         const lastPoint = stroke.points[pointsToDraw - 1]
-        const secondLast = stroke.points[pointsToDraw - 2]
-        
-        if (lastPoint.pressure > 0.3) {
-          ctx.globalAlpha = stroke.opacity * 0.5
+        if (lastPoint.pressure > 0.25) {
+          ctx.globalAlpha = stroke.opacity * 0.35
           ctx.fillStyle = stroke.color
-          const poolSize = stroke.maxWidth * lastPoint.pressure * 0.4
+          const poolSize = stroke.maxWidth * lastPoint.pressure * 0.5
           ctx.beginPath()
-          ctx.ellipse(
-            lastPoint.x, 
-            lastPoint.y, 
-            poolSize, 
-            poolSize * 0.6, 
-            Math.atan2(lastPoint.y - secondLast.y, lastPoint.x - secondLast.x),
-            0, 
-            Math.PI * 2
-          )
+          ctx.ellipse(lastPoint.x, lastPoint.y, poolSize * 0.8, poolSize * 0.5, 0, 0, Math.PI * 2)
           ctx.fill()
         }
       }
@@ -183,8 +169,8 @@ export function BrushstrokesAnimation() {
     }
 
     function animate() {
-      // Very subtle fade for natural blending
-      ctx.fillStyle = "rgba(248, 243, 233, 0.006)"
+      // Subtle continuous fade for smooth blending
+      ctx.fillStyle = "rgba(248, 243, 233, 0.008)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // Update and draw strokes
@@ -192,14 +178,14 @@ export function BrushstrokesAnimation() {
         stroke.progress += stroke.speed
         drawBrushStroke(ctx, stroke)
 
-        // Reset stroke when complete
-        if (stroke.progress >= 1.05) {
+        // Reset stroke when complete and slightly off screen
+        if (stroke.progress > 1.1) {
           strokesRef.current[index] = createStroke()
         }
       })
 
-      // Occasionally add new stroke
-      if (Math.random() > 0.997 && strokesRef.current.length < 5) {
+      // Add new strokes occasionally for layered effect
+      if (Math.random() > 0.995 && strokesRef.current.length < 6) {
         strokesRef.current.push(createStroke())
       }
 
