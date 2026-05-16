@@ -13,6 +13,11 @@ const photos = [
     label: "Exterior Repaint",
   },
   {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1362-1m60OIFWArMhHFWHrCBxuhWNZTjx0n.jpeg",
+    alt: "Modern single-story house painted white stucco with black window frames and contemporary landscaping",
+    label: "Modern Exterior",
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5361-6byU8RxCo5g5Ss5KUszVw5gpiXAn6m.jpeg",
     alt: "Freshly stained wood deck with matching railing in warm cedar tone",
     label: "Deck Staining",
@@ -27,7 +32,7 @@ const doorStaining = {
   label: "Door Staining",
 }
 
-const rotations = ["-rotate-1", "", "rotate-1"]
+const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]"]
 
 export function Gallery() {
   return (
@@ -41,8 +46,8 @@ export function Gallery() {
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-          {/* First two regular photos */}
-          {photos.slice(0, 2).map((photo, i) => (
+          {/* First three regular photos */}
+          {photos.slice(0, 3).map((photo, i) => (
             <Reveal key={i} delay={i * 60}>
               <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[i] ?? ""}`}>
                 <img
@@ -59,7 +64,7 @@ export function Gallery() {
           ))}
 
           {/* Before/After slider for door staining */}
-          <Reveal delay={120}>
+          <Reveal delay={180}>
             <BeforeAfterSlider
               beforeSrc={doorStaining.beforeSrc}
               afterSrc={doorStaining.afterSrc}
@@ -70,16 +75,16 @@ export function Gallery() {
           </Reveal>
 
           {/* Last photo - deck staining */}
-          <Reveal delay={180}>
-            <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[2]}`}>
+          <Reveal delay={240}>
+            <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[3]}`}>
               <img
-                src={photos[2].src}
-                alt={photos[2].alt}
+                src={photos[3].src}
+                alt={photos[3].alt}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photos[2].label}</span>
+                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photos[3].label}</span>
               </div>
             </div>
           </Reveal>
