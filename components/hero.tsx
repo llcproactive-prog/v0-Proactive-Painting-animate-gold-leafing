@@ -8,7 +8,7 @@ export function Hero() {
           <div>
 
             <span className="font-[var(--font-caveat)] text-[32px] text-[#c97954] mb-2 inline-block -rotate-1">
-              Hi I&apos;m Raymond of Proactive Painting
+              Hi I&apos;m Raymond with Proactive Painting
             </span>
             <h1 className="font-[var(--font-fraunces)] text-[clamp(44px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-7 text-[#3a342c]">
               A{" "}
