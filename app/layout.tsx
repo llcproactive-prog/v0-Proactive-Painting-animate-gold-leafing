@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-[#f8f3e9]">
+    <html lang="en" className="bg-[#f8f3e9] scroll-smooth">
       <body className={`${inter.variable} ${dmSerifDisplay.variable} ${instrumentSans.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
