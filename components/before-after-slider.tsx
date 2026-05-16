@@ -143,7 +143,7 @@ export function BeforeAfterSlider({
         />
       </svg>
 
-      {/* Paintbrush handle */}
+      {/* Basic slider handle */}
       <div
         className="absolute z-20 -translate-x-1/2 -translate-y-1/2"
         style={{ left: `${sliderPosition}%`, top: "50%" }}
@@ -151,111 +151,16 @@ export function BeforeAfterSlider({
         onTouchStart={(e) => { handleMouseDown(e as any); }}
       >
         <div
-          className="relative flex flex-col items-center"
+          className="w-8 h-8 bg-white rounded-full shadow-lg cursor-grab active:cursor-grabbing flex items-center justify-center transition-transform duration-200"
           style={{
-            filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.45))",
-            transform: active ? "scale(1.1)" : "scale(1)",
-            transition: "transform 0.2s ease",
+            transform: active ? "scale(1.15)" : "scale(1)",
+            boxShadow: active ? "0 4px 12px rgba(0,0,0,0.35)" : "0 2px 8px rgba(0,0,0,0.25)",
           }}
         >
-          {/* Dense bristles */}
-          <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Vertical bristle lines — densely packed */}
-            <line x1="4" y1="0" x2="3.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="6" y1="0" x2="5.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="8" y1="0" x2="8.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="10" y1="0" x2="9.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="12" y1="0" x2="12.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="14" y1="0" x2="13.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="16" y1="0" x2="16.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="18" y1="0" x2="17.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="20" y1="0" x2="20.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="22" y1="0" x2="21.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="24" y1="0" x2="24.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="26" y1="0" x2="25.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="28" y1="0" x2="28.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="30" y1="0" x2="29.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="32" y1="0" x2="32.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="34" y1="0" x2="33.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="36" y1="0" x2="36.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="38" y1="0" x2="37.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="40" y1="0" x2="40.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="42" y1="0" x2="41.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="44" y1="0" x2="44.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="46" y1="0" x2="45.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="48" y1="0" x2="48.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="50" y1="0" x2="49.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            <line x1="52" y1="0" x2="52.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
-            
-            {/* Metal ferrule band */}
-            <rect x="2" y="36" width="52" height="8" fill="url(#ferruleGradient)" rx="1" />
-            <line x1="2" y1="37" x2="54" y2="37" stroke="rgba(255,255,255,0.4)" strokeWidth="0.5" />
-            <line x1="2" y1="43" x2="54" y2="43" stroke="rgba(0,0,0,0.2)" strokeWidth="0.5" />
-            
-            {/* Gradients */}
-            <defs>
-              <linearGradient id="bristleGradient" x1="0" y1="0" x2="0" y2="38">
-                <stop offset="0%" stopColor="#3d7aa8" />
-                <stop offset="50%" stopColor="#2d5f8f" />
-                <stop offset="100%" stopColor="#1a4f7a" />
-              </linearGradient>
-              <linearGradient id="ferruleGradient" x1="0" y1="36" x2="0" y2="44">
-                <stop offset="0%" stopColor="#d0d0d0" />
-                <stop offset="50%" stopColor="#a8a8a8" />
-                <stop offset="100%" stopColor="#808080" />
-              </linearGradient>
-            </defs>
+          <svg className="w-4 h-4 text-[#3a342c]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8 19l7-7-7-7" />
           </svg>
-
-          {/* Wooden handle */}
-          <div
-            style={{
-              width: 44,
-              height: 56,
-              background: "linear-gradient(135deg, #d4a574 0%, #c9945f 30%, #b8845c 50%, #a67449 70%, #8f6340 100%)",
-              borderRadius: "8px 8px 16px 16px",
-              boxShadow: "inset 0 2px 4px rgba(255,255,255,0.3), inset -2px 0 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.35)",
-              position: "relative",
-              overflow: "hidden",
-              marginTop: -2,
-            }}
-          >
-            {/* Wood grain lines */}
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: `repeating-linear-gradient(
-                90deg,
-                transparent 0px,
-                rgba(0,0,0,0.05) 2px,
-                transparent 4px,
-                rgba(255,255,255,0.03) 6px
-              )`,
-            }} />
-            
-            {/* Highlight edge */}
-            <div style={{
-              position: "absolute",
-              top: 0,
-              left: 4,
-              width: 12,
-              height: "100%",
-              background: "linear-gradient(90deg, rgba(255,255,255,0.25) 0%, transparent 100%)",
-            }} />
-            
-            {/* Hole near bottom */}
-            <div style={{
-              position: "absolute",
-              width: 6,
-              height: 6,
-              borderRadius: "50%",
-              background: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(0,0,0,0.4))",
-              bottom: 12,
-              left: "50%",
-              transform: "translateX(-50%)",
-              boxShadow: "inset 0 1px 2px rgba(0,0,0,0.5)",
-            }} />
-          </div>
         </div>
       </div>
 
