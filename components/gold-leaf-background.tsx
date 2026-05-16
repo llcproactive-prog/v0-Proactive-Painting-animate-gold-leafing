@@ -37,21 +37,21 @@ export function GoldLeafBackground() {
     window.addEventListener("resize", resizeCanvas)
 
     // Initialize gold leaves
-    const leafCount = Math.floor((window.innerWidth * window.innerHeight) / 25000)
-    leavesRef.current = Array.from({ length: Math.max(15, leafCount) }, () => createLeaf(canvas))
+    const leafCount = Math.floor((window.innerWidth * window.innerHeight) / 20000)
+    leavesRef.current = Array.from({ length: Math.max(20, leafCount) }, () => createLeaf(canvas))
 
     function createLeaf(canvas: HTMLCanvasElement): GoldLeaf {
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 20 + 10,
+        size: Math.random() * 25 + 12,
         rotation: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.02,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: Math.random() * 0.2 + 0.1,
-        opacity: Math.random() * 0.4 + 0.2,
+        rotationSpeed: (Math.random() - 0.5) * 0.03,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: Math.random() * 0.25 + 0.15,
+        opacity: Math.random() * 0.5 + 0.35,
         shimmerPhase: Math.random() * Math.PI * 2,
-        shimmerSpeed: Math.random() * 0.02 + 0.01,
+        shimmerSpeed: Math.random() * 0.04 + 0.025,
         shape: Math.floor(Math.random() * 3),
       }
     }
@@ -61,16 +61,18 @@ export function GoldLeafBackground() {
       ctx.translate(leaf.x, leaf.y)
       ctx.rotate(leaf.rotation)
 
-      // Shimmer effect
-      const shimmer = Math.sin(leaf.shimmerPhase) * 0.3 + 0.7
-      const alpha = leaf.opacity * shimmer
+      // Enhanced shimmer effect with more contrast
+      const shimmer = Math.sin(leaf.shimmerPhase) * 0.5 + 0.5
+      const pulse = Math.sin(leaf.shimmerPhase * 2) * 0.2 + 0.8
+      const alpha = leaf.opacity * (shimmer * 0.6 + 0.4) * pulse
 
-      // Create gradient for gold effect
+      // Create vibrant gradient for gold effect
       const gradient = ctx.createLinearGradient(-leaf.size / 2, -leaf.size / 2, leaf.size / 2, leaf.size / 2)
-      gradient.addColorStop(0, `rgba(244, 228, 166, ${alpha})`)
-      gradient.addColorStop(0.3, `rgba(212, 175, 55, ${alpha})`)
-      gradient.addColorStop(0.6, `rgba(255, 215, 0, ${alpha * 1.2})`)
-      gradient.addColorStop(1, `rgba(184, 134, 11, ${alpha})`)
+      gradient.addColorStop(0, `rgba(255, 223, 100, ${alpha})`)
+      gradient.addColorStop(0.25, `rgba(255, 200, 50, ${alpha * 1.1})`)
+      gradient.addColorStop(0.5, `rgba(255, 215, 0, ${alpha * 1.3})`)
+      gradient.addColorStop(0.75, `rgba(218, 165, 32, ${alpha * 1.1})`)
+      gradient.addColorStop(1, `rgba(205, 150, 20, ${alpha})`)
 
       ctx.fillStyle = gradient
 
@@ -102,11 +104,20 @@ export function GoldLeafBackground() {
       ctx.closePath()
       ctx.fill()
 
-      // Add highlight
-      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.3})`
+      // Add bright highlight
+      const highlightAlpha = alpha * shimmer * 0.6
+      ctx.fillStyle = `rgba(255, 255, 220, ${highlightAlpha})`
       ctx.beginPath()
-      ctx.ellipse(-leaf.size / 6, -leaf.size / 6, leaf.size / 8, leaf.size / 12, Math.PI / 4, 0, Math.PI * 2)
+      ctx.ellipse(-leaf.size / 5, -leaf.size / 5, leaf.size / 6, leaf.size / 10, Math.PI / 4, 0, Math.PI * 2)
       ctx.fill()
+
+      // Add secondary sparkle
+      if (shimmer > 0.7) {
+        ctx.fillStyle = `rgba(255, 255, 255, ${(shimmer - 0.7) * 2 * alpha})`
+        ctx.beginPath()
+        ctx.arc(leaf.size / 8, -leaf.size / 8, leaf.size / 12, 0, Math.PI * 2)
+        ctx.fill()
+      }
 
       ctx.restore()
     }
@@ -149,7 +160,7 @@ export function GoldLeafBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.85 }}
       aria-hidden="true"
     />
   )
