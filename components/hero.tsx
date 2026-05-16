@@ -8,7 +8,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6 lg:gap-[60px] items-center">
           <div className="order-2 lg:order-1 md:mt-0">
 
-            <span className="gold-twinkle font-[var(--font-instrument)] text-[28px] md:text-[32px] text-[#D4AF37] mb-2 inline-block">
+            <span className="gold-glitter font-[var(--font-instrument)] text-[28px] md:text-[32px] text-[#D4AF37] mb-2 inline-block">
               Hi I&apos;m Raymond with Proactive Painting
             </span>
             <h1 className="font-[var(--font-dm-serif)] text-[clamp(38px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-6 md:mb-7 text-[#3a342c]">
@@ -17,7 +17,7 @@ export function Hero() {
                 family
               </span>{" "}
               painting business, taking care of{" "}
-              <em className="gold-glow font-light text-[#D4AF37]">Bay Area homes</em> since 2018.
+              <em className="gold-glitter font-light text-[#D4AF37]">Bay Area homes</em> since 2018.
             </h1>
             <p className="text-[16px] md:text-[19px] leading-relaxed text-[#5e564a] max-w-[500px] mb-7 md:mb-9">
               I&apos;ve been painting Bay Area homes since 2009, and running Proactive Painting since 2018. My wife Patty handles scheduling and keeps everything organized — when you call, you&apos;ll usually get her first, then me. No call centers, no salespeople. Just careful work on interior, exterior, and residential projects, done the way I&apos;d paint my own home.
@@ -43,22 +43,22 @@ export function Hero() {
 
             <div className="flex gap-5 mt-10 md:mt-12 items-center flex-wrap text-[#5e564a]">
               <div className="flex items-center gap-2 text-sm font-medium">
-                <span className="gold-dot w-2 h-2 bg-[#D4AF37] rounded-full" />
+                <span className="sparkle-dot w-2 h-2 bg-[#D4AF37] rounded-full" />
                 Licensed CSLB 1155142
               </div>
               <span className="text-[rgba(58,52,44,0.14)]">·</span>
               <div className="flex items-center gap-2 text-sm font-medium">
-                <span className="gold-dot w-2 h-2 bg-[#D4AF37] rounded-full" style={{ animationDelay: "0.5s" }} />
+                <span className="sparkle-dot w-2 h-2 bg-[#D4AF37] rounded-full" style={{ animationDelay: "0.4s" }} />
                 Fully Insured
               </div>
               <span className="text-[rgba(58,52,44,0.14)]">·</span>
               <div className="flex items-center gap-2 text-sm font-medium">
-                <span className="gold-dot w-2 h-2 bg-[#D4AF37] rounded-full" style={{ animationDelay: "1s" }} />
+                <span className="sparkle-dot w-2 h-2 bg-[#D4AF37] rounded-full" style={{ animationDelay: "0.8s" }} />
                 16 Years Painting
               </div>
               <span className="text-[rgba(58,52,44,0.14)]">·</span>
               <div className="flex items-center gap-2 text-sm font-medium">
-                <span className="gold-dot w-2 h-2 bg-[#D4AF37] rounded-full" style={{ animationDelay: "1.5s" }} />
+                <span className="sparkle-dot w-2 h-2 bg-[#D4AF37] rounded-full" style={{ animationDelay: "1.2s" }} />
                 Proactive since 2018
               </div>
             </div>

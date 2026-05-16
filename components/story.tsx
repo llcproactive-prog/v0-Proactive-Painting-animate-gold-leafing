@@ -5,9 +5,9 @@ export function Story() {
     <section id="story" className="py-20 bg-[#f0e8d8]">
       <div className="max-w-[780px] mx-auto text-center px-7">
         <Reveal>
-          <span className="gold-twinkle font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-3 block">our story</span>
+          <span className="gold-glitter font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-3 block">our story</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(32px,4.5vw,52px)] font-normal leading-relaxed tracking-tight mb-8 text-balance">
-            A small business with <em className="gold-glow text-[#D4AF37]">big care</em> for every home we paint.
+            A small business with <em className="gold-glitter text-[#D4AF37]">big care</em> for every home we paint.
           </h2>
           <div className="text-lg leading-relaxed text-[#5e564a] space-y-6">
             <p>

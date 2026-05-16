@@ -89,7 +89,7 @@ export function Contact() {
         </div>
 
         <div className="bg-[#f8f3e9] text-[#3a342c] p-10 rounded-lg shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)]">
-          <div className="gold-twinkle font-[var(--font-instrument)] text-[22px] text-[#D4AF37] mb-1.5">
+          <div className="gold-glitter font-[var(--font-instrument)] text-[22px] text-[#D4AF37] mb-1.5">
             tell us about your project
           </div>
           <div className="font-[var(--font-dm-serif)] text-[26px] font-medium mb-7 tracking-tight">
