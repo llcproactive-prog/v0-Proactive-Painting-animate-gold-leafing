@@ -5,6 +5,66 @@ import { useState, useRef, useEffect } from "react"
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
 
+function ServiceVideo({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isMuted, setIsMuted] = useState(true)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.muted = isMuted
+      video.play().catch(() => {
+        console.log("[v0] Video autoplay blocked, trying muted")
+        video.muted = true
+        video.play()
+      })
+    }
+  }, [isMuted])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.play().catch(() => {
+        console.log("[v0] Initial autoplay blocked")
+      })
+    }
+  }, [])
+
+  return (
+    <div className="absolute inset-0 bg-[#2a2a2a]">
+      <video
+        ref={videoRef}
+        muted
+        autoPlay
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+      <button
+        onClick={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          setIsMuted(!isMuted)
+        }}
+        className="absolute bottom-3 right-3 z-10 bg-[rgba(58,52,44,0.7)] hover:bg-[rgba(58,52,44,0.9)] text-[#f8f3e9] p-2 rounded-full transition-all duration-200 hover:scale-110"
+        title={isMuted ? "Unmute" : "Mute"}
+      >
+        {isMuted ? (
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+          </svg>
+        ) : (
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+          </svg>
+        )}
+      </button>
+    </div>
+  )
+}
+
 const services = [
   {
     number: "no. 01",
@@ -32,8 +92,6 @@ const services = [
 ]
 
 export function Services() {
-  const [videoMuted, setVideoMuted] = useState(true)
-
   return (
     <section id="services" className="py-24 pb-16">
       <div className="max-w-[1180px] mx-auto px-7">
@@ -64,40 +122,7 @@ export function Services() {
                       />
                     </div>
                   ) : service.type === "video" ? (
-                    <div className="absolute inset-0 relative bg-[#2a2a2a]">
-                      <video
-                        key={`video-${service.title}`}
-                        muted={videoMuted}
-                        autoPlay
-                        loop
-                        playsInline
-                        crossOrigin="anonymous"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src={service.videoSrc} type="video/mp4" />
-                      </video>
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault()
-                          e.stopPropagation()
-                          setVideoMuted(!videoMuted)
-                        }}
-                        className="absolute bottom-3 right-3 z-10 bg-[rgba(58,52,44,0.7)] hover:bg-[rgba(58,52,44,0.9)] text-[#f8f3e9] p-2 rounded-full transition-all duration-200 hover:scale-110"
-                        title={videoMuted ? "Unmute" : "Mute"}
-                      >
-                        {videoMuted ? (
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.5 4.06c0-1.336-1.616-2.256-2.73-1.72l-5.24 2.97A4 4 0 004 9.604v4.792a4 4 0 001.53 3.134l5.24 2.97c1.114.536 2.73-.384 2.73-1.72V4.06zM18.584 5.106a.75.75 0 011.06 0c2.942 2.941 2.942 7.708 0 10.65a.75.75 0 11-1.06-1.061 6.5 6.5 0 000-8.529.75.75 0 010-1.06z" />
-                            <path d="M16.009 5.51a.75.75 0 011.06.001c1.95 1.951 1.95 5.12 0 7.07a.75.75 0 11-1.061-1.06 4 4 0 000-5.951.75.75 0 01.001-1.06z" />
-                          </svg>
-                        ) : (
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.5 4.06c0-1.336-1.616-2.256-2.73-1.72l-5.24 2.97A4 4 0 004 9.604v4.792a4 4 0 001.53 3.134l5.24 2.97c1.114.536 2.73-.384 2.73-1.72V4.06z" />
-                            <path d="M15.75 7.5a.75.75 0 011.06 0l2.19 2.19 2.19-2.19a.75.75 0 111.06 1.06l-2.19 2.19 2.19 2.19a.75.75 0 11-1.06 1.06l-2.19-2.19-2.19 2.19a.75.75 0 11-1.06-1.06l2.19-2.19-2.19-2.19a.75.75 0 010-1.06z" />
-                          </svg>
-                        )}
-                      </button>
-                    </div>
+                    <ServiceVideo src={service.videoSrc!} />
                   ) : (
                     <>
                       <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
