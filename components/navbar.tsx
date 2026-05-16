@@ -102,10 +102,17 @@ export function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div 
         className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-[350px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-[#f8f3e9] border-t border-[rgba(58,52,44,0.14)] px-7 py-4 flex flex-col gap-1">
+          <Link
+            href="#"
+            onClick={closeMenu}
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
+          >
+            Home
+          </Link>
           <Link
             href="#story"
             onClick={closeMenu}
