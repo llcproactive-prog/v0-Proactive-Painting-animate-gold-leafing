@@ -230,41 +230,6 @@ export function BeforeAfterSlider({
               </linearGradient>
             </defs>
           </svg>
-          
-          {/* Wooden brush handle */}
-          <div
-            style={{
-              width: 32,
-              height: 48,
-              background: "linear-gradient(90deg, #8b6f47 0%, #a88c5d 40%, #9d7d52 60%, #7a5f3f 100%)",
-              borderRadius: "4px 4px 2px 2px",
-              boxShadow: "inset 0 1px 2px rgba(255,255,255,0.25), inset -1px 0 1px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3)",
-              marginTop: -2,
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            {/* Wood grain texture */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: `linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.08) 20%, transparent 40%, rgba(0,0,0,0.06) 60%, transparent 80%, rgba(255,255,255,0.1) 100%)`,
-                backgroundSize: "100% 100%",
-              }}
-            />
-            {/* Subtle highlight edge */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: "20%",
-                width: "20%",
-                height: "100%",
-                background: "linear-gradient(90deg, rgba(255,255,255,0.15) 0%, transparent 100%)",
-              }}
-            />
-          </div>
         </div>
       </div>
 
