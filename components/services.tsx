@@ -70,7 +70,7 @@ const services = [
     number: "no. 01",
     title: "Interior",
     description:
-      "Walls, trim, ceilings, doors, cabinets. Careful prep, low-VOC options, furniture moved and protected like it's our own.",
+      "Walls, trim, ceilings, doors. Careful prep, low-VOC options, furniture moved and protected like it's our own.",
     type: "slider",
   },
   {
