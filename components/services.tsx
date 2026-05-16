@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
 
@@ -33,6 +33,13 @@ const services = [
 
 export function Services() {
   const [videoMuted, setVideoMuted] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = videoMuted
+    }
+  }, [videoMuted])
 
   return (
     <section id="services" className="py-24 pb-16">
@@ -64,13 +71,15 @@ export function Services() {
                       />
                     </div>
                   ) : service.type === "video" ? (
-                    <div className="absolute inset-0 relative">
+                    <div className="absolute inset-0 relative bg-[#2a2a2a]">
                       <video
+                        ref={videoRef}
                         src={service.videoSrc}
                         autoPlay
                         loop
-                        muted={videoMuted}
+                        muted
                         playsInline
+                        crossOrigin="anonymous"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <button
