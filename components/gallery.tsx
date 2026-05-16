@@ -18,6 +18,11 @@ const photos = [
     label: "Modern Exterior",
   },
   {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2F751399-C790-422D-8F2F-3B45BCC39065-04vPvBCpwr0kRkhCYD2CA6uwJDMf9t.jpeg",
+    alt: "Residential home with white stucco exterior, black window frames, and professional landscaping",
+    label: "Modern Home",
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5361-6byU8RxCo5g5Ss5KUszVw5gpiXAn6m.jpeg",
     alt: "Freshly stained wood deck with matching railing in warm cedar tone",
     label: "Deck Staining",
@@ -50,7 +55,7 @@ const exteriorStaining = {
   afterLabel: "Dining Room",
 }
 
-const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]"]
+const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]", "rotate-1"]
 
 export function Gallery() {
   return (
@@ -64,8 +69,8 @@ export function Gallery() {
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-          {/* First three regular photos */}
-          {photos.slice(0, 3).map((photo, i) => (
+          {/* First four regular photos */}
+          {photos.slice(0, 4).map((photo, i) => (
             <Reveal key={i} delay={i * 60}>
               <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[i] ?? ""}`}>
                 <img
@@ -82,7 +87,7 @@ export function Gallery() {
           ))}
 
           {/* Interior slider */}
-          <Reveal delay={180}>
+          <Reveal delay={240}>
             <BeforeAfterSlider
               beforeSrc={interiorSlider.beforeSrc}
               afterSrc={interiorSlider.afterSrc}
@@ -95,7 +100,7 @@ export function Gallery() {
           </Reveal>
 
           {/* Exterior staining slider */}
-          <Reveal delay={240}>
+          <Reveal delay={300}>
             <BeforeAfterSlider
               beforeSrc={exteriorStaining.beforeSrc}
               afterSrc={exteriorStaining.afterSrc}
@@ -108,7 +113,7 @@ export function Gallery() {
           </Reveal>
 
           {/* Before/After slider for door staining */}
-          <Reveal delay={300}>
+          <Reveal delay={360}>
             <BeforeAfterSlider
               beforeSrc={doorStaining.beforeSrc}
               afterSrc={doorStaining.afterSrc}
@@ -119,16 +124,16 @@ export function Gallery() {
           </Reveal>
 
           {/* Last photo - deck staining */}
-          <Reveal delay={360}>
-            <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[3]}`}>
+          <Reveal delay={420}>
+            <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[4]}`}>
               <img
-                src={photos[3].src}
-                alt={photos[3].alt}
+                src={photos[4].src}
+                alt={photos[4].alt}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photos[3].label}</span>
+                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{photos[4].label}</span>
               </div>
             </div>
           </Reveal>
