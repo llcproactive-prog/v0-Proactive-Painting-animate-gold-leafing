@@ -62,7 +62,7 @@ export function Contact() {
           </div>
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">License</span>
-            <span className="font-[var(--font-dm-serif)] text-lg">CSLB C-33</span>
+            <span className="font-[var(--font-dm-serif)] text-lg">CSLB 1155142</span>
           </div>
         </div>
 

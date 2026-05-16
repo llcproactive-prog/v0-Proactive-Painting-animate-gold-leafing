@@ -44,7 +44,7 @@ export function Hero() {
             <div className="flex gap-5 mt-12 items-center flex-wrap text-[#5e564a]">
               <div className="flex items-center gap-2 text-sm font-medium">
                 <span className="w-2 h-2 bg-[#D4AF37] rounded-full" />
-                Licensed CSLB C-33
+                Licensed CSLB 1155142
               </div>
               <span className="text-[rgba(58,52,44,0.14)]">·</span>
               <div className="flex items-center gap-2 text-sm font-medium">

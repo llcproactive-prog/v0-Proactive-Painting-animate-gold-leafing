@@ -34,7 +34,7 @@ export function Footer() {
         <div>
           <div className="font-[var(--font-instrument)] text-[#2DD4BF] text-xl mb-3">The details</div>
           <p className="leading-relaxed">
-            CSLB C-33 Licensed
+            CSLB 1155142 Licensed
             <br />
             Fully Insured
             <br />
