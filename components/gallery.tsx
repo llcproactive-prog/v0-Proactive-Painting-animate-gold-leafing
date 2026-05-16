@@ -40,10 +40,10 @@ const doorStaining = {
 }
 
 const exteriorStaining = {
-  beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8673-FpvpvhyuFyu7swSaKrYJzD05orVLm0.jpeg",
+  beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8589-JtMQh4YK7tYOptNsaaIeV9u3ARWSfB.jpeg",
   afterSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8673-FpvpvhyuFyu7swSaKrYJzD05orVLm0.jpeg",
-  beforeAlt: "Wooden structure with raw untreated wood showing before staining",
-  afterAlt: "Same wooden structure with rich dark reddish-brown stain finish",
+  beforeAlt: "Garage door with raw untreated wood and weathered finish before staining",
+  afterAlt: "Same garage door with rich dark reddish-brown stain finish after treatment",
   label: "Exterior Staining",
   beforeLabel: "Raw Wood",
   afterLabel: "Stained",
