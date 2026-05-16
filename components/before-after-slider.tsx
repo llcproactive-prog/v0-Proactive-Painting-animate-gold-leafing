@@ -165,17 +165,17 @@ export function BeforeAfterSlider({
       </div>
 
       {/* Before/After labels */}
-      <div className="absolute top-3 left-3 z-10">
+      <div className="absolute top-2 sm:top-3 left-2 sm:left-3 z-10">
         <span
-          className="text-[#f8f3e9] px-2.5 py-1 text-[10px] tracking-widest uppercase font-bold rounded-full"
+          className="text-[#f8f3e9] px-1.5 sm:px-2.5 py-0.5 sm:py-1 text-[8px] sm:text-[10px] tracking-widest uppercase font-bold rounded-full"
           style={{ background: "rgba(45,110,168,0.88)", backdropFilter: "blur(4px)" }}
         >
           {beforeLabel}
         </span>
       </div>
-      <div className="absolute top-3 right-3 z-10">
+      <div className="absolute top-2 sm:top-3 right-2 sm:right-3 z-10">
         <span
-          className="text-[#f8f3e9] px-2.5 py-1 text-[10px] tracking-widest uppercase font-bold rounded-full"
+          className="text-[#f8f3e9] px-1.5 sm:px-2.5 py-0.5 sm:py-1 text-[8px] sm:text-[10px] tracking-widest uppercase font-bold rounded-full"
           style={{ background: "rgba(45,110,168,0.65)", backdropFilter: "blur(4px)" }}
         >
           {afterLabel}
