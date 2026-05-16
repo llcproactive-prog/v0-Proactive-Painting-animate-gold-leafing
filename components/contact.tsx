@@ -101,7 +101,7 @@ export function Contact() {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all"
+              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all"
             />
           </div>
 
@@ -128,7 +128,7 @@ export function Contact() {
                 placeholder="San Jose, etc."
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all placeholder:text-[#5e564a]/50"
+                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all placeholder:text-[#5e564a]/50"
               />
             </div>
           </div>
@@ -141,7 +141,7 @@ export function Contact() {
               placeholder="Rooms, timeline, anything we should know."
               value={formData.details}
               onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all resize-y min-h-[90px] placeholder:text-[#5e564a]/50"
+              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all resize-y min-h-[90px] placeholder:text-[#5e564a]/50"
             />
           </div>
 

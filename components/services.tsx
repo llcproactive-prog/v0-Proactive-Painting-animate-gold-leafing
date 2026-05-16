@@ -87,7 +87,7 @@ const services = [
     title: "Residential",
     description:
       "Whole-home repaints, single rooms, accent walls, color consultation. We'll help you pick colors you'll love living with.",
-    gradient: "from-[#f0d8c4] via-[#c97954] to-[#8a4528]",
+    gradient: "from-[#d4af37] via-[#2d7d4a] to-[#2dd4bf]",
     type: "gradient",
   },
 ]
