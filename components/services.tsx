@@ -33,13 +33,6 @@ const services = [
 
 export function Services() {
   const [videoMuted, setVideoMuted] = useState(true)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = videoMuted
-    }
-  }, [videoMuted])
 
   return (
     <section id="services" className="py-24 pb-16">
@@ -73,18 +66,20 @@ export function Services() {
                   ) : service.type === "video" ? (
                     <div className="absolute inset-0 relative bg-[#2a2a2a]">
                       <video
-                        ref={videoRef}
-                        src={service.videoSrc}
+                        key={`video-${service.title}`}
+                        muted={videoMuted}
                         autoPlay
                         loop
-                        muted
                         playsInline
                         crossOrigin="anonymous"
                         className="absolute inset-0 w-full h-full object-cover"
-                      />
+                      >
+                        <source src={service.videoSrc} type="video/mp4" />
+                      </video>
                       <button
                         onClick={(e) => {
                           e.preventDefault()
+                          e.stopPropagation()
                           setVideoMuted(!videoMuted)
                         }}
                         className="absolute bottom-3 right-3 z-10 bg-[rgba(58,52,44,0.7)] hover:bg-[rgba(58,52,44,0.9)] text-[#f8f3e9] p-2 rounded-full transition-all duration-200 hover:scale-110"
