@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Hero() {
   return (
@@ -63,10 +64,17 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/5] bg-gradient-to-br from-[#c8d2bd] via-[#9caa8c] to-[#6e7d5e] rounded-md overflow-hidden shadow-[0_30px_60px_-20px_rgba(58,52,44,0.25)]">
+          <div className="relative aspect-[4/5] rounded-md overflow-hidden shadow-[0_30px_60px_-20px_rgba(58,52,44,0.25)]">
+            <Image
+              src="/raymond-family.jpg"
+              alt="Raymond with his family - owners of Proactive Painting"
+              fill
+              className="object-cover"
+              priority
+            />
             <div className="absolute inset-4 border border-[rgba(248,243,233,0.4)] rounded pointer-events-none" />
             <div className="absolute top-4 right-4 bg-[rgba(212,175,55,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
-              Swap Photo
+              Family
             </div>
             <div className="absolute bottom-6 left-6 right-6 bg-[rgba(248,243,233,0.96)] p-3.5 rounded">
               <div className="font-[var(--font-instrument)] text-2xl text-[#3a342c] leading-none">
