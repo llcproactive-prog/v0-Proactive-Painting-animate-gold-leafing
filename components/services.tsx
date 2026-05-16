@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
+import { ResidentialGallery } from "./residential-gallery"
 
 function ServiceVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -113,16 +114,18 @@ export function Services() {
                   {service.type === "slider" ? (
                     <div className="absolute inset-0 rounded overflow-hidden">
                       <BeforeAfterSlider
-                        beforeSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/482d3317-7274-46b8-aae7-5e64ad2af0e0.jpeg"
-                        afterSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e17b5972-c88c-4e7f-bac7-c63f61dc3f3e.jpeg"
-                        beforeAlt="Modern living room with cream walls, white furniture, and vaulted ceiling"
-                        afterAlt="Elegant bedroom with warm beige walls, white bedding, and hardwood floors"
+                        beforeSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3126-57pDbLdUJeHeTDgrkzCTkbmNnTc6kJ.jpeg"
+                        afterSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3127-21ifrnlnYHRs1IdG6rYSnc1vKxdq5G.jpeg"
+                        beforeAlt="Interior living room painted blue-grey with white crown molding"
+                        afterAlt="Interior dining room painted blue-grey with white crown molding and crystal chandelier"
                         beforeLabel="Living Room"
-                        afterLabel="Bedroom"
+                        afterLabel="Dining Room"
                       />
                     </div>
                   ) : service.type === "video" ? (
                     <ServiceVideo src={service.videoSrc!} />
+                  ) : service.title === "Residential" ? (
+                    <ResidentialGallery />
                   ) : (
                     <>
                       <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
