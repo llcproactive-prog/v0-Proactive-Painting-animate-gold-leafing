@@ -76,14 +76,6 @@ export function Hero() {
             <div className="absolute top-4 right-4 bg-[rgba(212,175,55,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
               Family
             </div>
-            <div className="absolute bottom-6 left-6 right-6 bg-[rgba(248,243,233,0.96)] p-3.5 rounded">
-              <div className="font-[var(--font-instrument)] text-2xl text-[#3a342c] leading-none">
-                Raymond &amp; Patty
-              </div>
-              <div className="text-xs text-[#5e564a] tracking-widest uppercase mt-1">
-                Owners · Proactive Painting
-              </div>
-            </div>
           </div>
         </div>
       </div>
