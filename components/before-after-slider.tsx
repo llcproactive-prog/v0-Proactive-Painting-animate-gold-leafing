@@ -170,42 +170,63 @@ export function BeforeAfterSlider({
           >
             <div className="w-full border-t border-[rgba(0,0,0,0.15)]" />
           </div>
-          {/* Sash brush bristles — wide and flat */}
-          <svg width="44" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Sash brush bristles — dense and realistic */}
+          <svg width="48" height="38" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Bristle base rectangle */}
-            <rect x="2" y="0" width="40" height="4" fill="#c9b8a0" rx="1" />
-            {/* Left bristle group */}
-            <path d="M 8 4 Q 6 8, 5 14 Q 4 20, 6 28 Q 7 31, 8 32"
-              fill="url(#sash-grad-left)" />
-            <path d="M 12 4 Q 10 9, 9 16 Q 8 23, 10 30 Q 11 31, 12 32"
-              fill="url(#sash-grad-left)" />
-            {/* Center bristle group */}
-            <path d="M 16 4 Q 14 10, 13 18 Q 12 26, 14 32"
-              fill="url(#sash-grad-center)" />
-            <path d="M 22 4 Q 24 10, 25 18 Q 26 26, 24 32"
-              fill="url(#sash-grad-center)" />
-            {/* Right bristle group */}
-            <path d="M 32 4 Q 34 9, 35 16 Q 36 23, 34 30 Q 33 31, 32 32"
-              fill="url(#sash-grad-right)" />
-            <path d="M 36 4 Q 38 8, 39 14 Q 40 20, 38 28 Q 37 31, 36 32"
-              fill="url(#sash-grad-right)" />
-            {/* Highlight on bristles */}
-            <ellipse cx="18" cy="16" rx="6" ry="10" fill="rgba(255,255,255,0.2)" />
+            <rect x="1" y="0" width="46" height="5" fill="#d4c4b0" rx="2" />
+            
+            {/* Left edge bristles */}
+            <path d="M 4 5 Q 2 10, 1 17 Q 0 25, 2 33 Q 3 36, 4 38" fill="url(#bristle-dark)" />
+            <path d="M 7 5 Q 5 11, 4 19 Q 3 27, 5 35 Q 6 37, 7 38" fill="url(#bristle-dark)" />
+            
+            {/* Left-center bristles */}
+            <path d="M 10 5 Q 8 13, 7 22 Q 6 30, 8 37 Q 9 38, 10 38" fill="url(#bristle-medium)" />
+            <path d="M 13 5 Q 11 14, 10 24 Q 9 32, 11 38" fill="url(#bristle-medium)" />
+            <path d="M 16 5 Q 14 15, 13 26 Q 12 34, 14 38" fill="url(#bristle-light)" />
+            
+            {/* Center bristles - main mass */}
+            <path d="M 19 5 Q 17 16, 16 28 Q 15 35, 17 38" fill="url(#bristle-light)" />
+            <path d="M 22 5 Q 20 17, 19 30 Q 18 36, 20 38" fill="url(#bristle-center)" />
+            <path d="M 25 5 Q 23 17, 22 30 Q 21 36, 23 38" fill="url(#bristle-center)" />
+            <path d="M 28 5 Q 26 16, 25 28 Q 24 35, 26 38" fill="url(#bristle-light)" />
+            
+            {/* Right-center bristles */}
+            <path d="M 31 5 Q 29 15, 28 26 Q 27 34, 29 38" fill="url(#bristle-light)" />
+            <path d="M 34 5 Q 32 14, 31 24 Q 30 32, 32 38" fill="url(#bristle-medium)" />
+            <path d="M 37 5 Q 35 13, 34 22 Q 33 30, 35 37 Q 36 38, 37 38" fill="url(#bristle-medium)" />
+            
+            {/* Right edge bristles */}
+            <path d="M 40 5 Q 42 11, 43 19 Q 44 27, 42 35 Q 41 37, 40 38" fill="url(#bristle-dark)" />
+            <path d="M 43 5 Q 45 10, 46 17 Q 47 25, 45 33 Q 44 36, 43 38" fill="url(#bristle-dark)" />
+            
+            {/* Subtle highlight */}
+            <ellipse cx="24" cy="18" rx="8" ry="12" fill="rgba(255,255,255,0.15)" />
+            
+            {/* Gradients for depth and realism */}
             <defs>
-              <linearGradient id="sash-grad-left" x1="0" y1="0" x2="0" y2="32">
+              <linearGradient id="bristle-dark" x1="0" y1="0" x2="0" y2="38">
                 <stop offset="0%" stopColor="#5a9acc" />
-                <stop offset="50%" stopColor="#3d7aa8" />
-                <stop offset="100%" stopColor="#2d5f8f" />
+                <stop offset="35%" stopColor="#3d7aa8" />
+                <stop offset="70%" stopColor="#2d5f8f" />
+                <stop offset="100%" stopColor="#1f4566" />
               </linearGradient>
-              <linearGradient id="sash-grad-center" x1="0" y1="0" x2="0" y2="32">
-                <stop offset="0%" stopColor="#4a90c4" />
-                <stop offset="50%" stopColor="#2d6ea8" />
+              <linearGradient id="bristle-medium" x1="0" y1="0" x2="0" y2="38">
+                <stop offset="0%" stopColor="#6b9fce" />
+                <stop offset="35%" stopColor="#4a90c4" />
+                <stop offset="70%" stopColor="#2d6ea8" />
                 <stop offset="100%" stopColor="#1a4f7a" />
               </linearGradient>
-              <linearGradient id="sash-grad-right" x1="0" y1="0" x2="0" y2="32">
-                <stop offset="0%" stopColor="#3d7faa" />
-                <stop offset="50%" stopColor="#2a5a8a" />
-                <stop offset="100%" stopColor="#1a3f66" />
+              <linearGradient id="bristle-light" x1="0" y1="0" x2="0" y2="38">
+                <stop offset="0%" stopColor="#7daad4" />
+                <stop offset="35%" stopColor="#5a9acc" />
+                <stop offset="70%" stopColor="#3d7aa8" />
+                <stop offset="100%" stopColor="#2d5f8f" />
+              </linearGradient>
+              <linearGradient id="bristle-center" x1="0" y1="0" x2="0" y2="38">
+                <stop offset="0%" stopColor="#5a9acc" />
+                <stop offset="40%" stopColor="#3d7aa8" />
+                <stop offset="75%" stopColor="#2d6ea8" />
+                <stop offset="100%" stopColor="#1a4f7a" />
               </linearGradient>
             </defs>
           </svg>
