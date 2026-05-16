@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
 
@@ -78,27 +79,48 @@ function PhotoTile({ photo, index }: { photo: typeof photos[0]; index: number })
 }
 
 function VideoTile() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+      setIsPlaying(true)
+    }
+  }
+
+  const handlePause = () => {
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+      setIsPlaying(false)
+    }
+  }
+
   return (
-    <div className="relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group cursor-pointer">
+    <div
+      className="relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group cursor-pointer"
+      onClick={handlePlay}
+      onMouseEnter={handlePlay}
+      onMouseLeave={handlePause}
+    >
       <video
+        ref={videoRef}
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8675_compressed-7joecMwQIi0wj4VllyNpL7lJLqzkn6.mp4"
         className="absolute inset-0 w-full h-full object-cover"
         muted
         playsInline
-        onMouseEnter={(e) => e.currentTarget.play()}
-        onMouseLeave={(e) => {
-          e.currentTarget.pause()
-          e.currentTarget.currentTime = 0
-        }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-14 h-14 bg-[rgba(248,243,233,0.9)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          <svg className="w-6 h-6 text-[#3a342c] ml-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
+      {!isPlaying && (
+        <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-80 transition-opacity duration-300">
+          <div className="w-14 h-14 bg-[rgba(248,243,233,0.9)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg className="w-6 h-6 text-[#3a342c] ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
         </div>
-      </div>
+      )}
       <div className="absolute bottom-0 left-0 right-0 p-3">
         <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">Project Timelapse</span>
       </div>
