@@ -97,9 +97,9 @@ export function Services() {
     <section id="services" className="py-24 pb-16">
       <div className="max-w-[1180px] mx-auto px-7">
         <Reveal className="text-center mb-12">
-          <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-2 block">what we do</span>
+          <span className="font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">what we do</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
-            Three things, done <em className="text-[#6e7d5e]">well.</em>
+            Three things, done <em className="text-[#2D7D4A]">well.</em>
           </h2>
         </Reveal>
 
@@ -108,7 +108,7 @@ export function Services() {
             <Reveal key={service.title} delay={i * 100}>
               <Link
                 href="#contact"
-                className="bg-[#f8f3e9] border border-[rgba(58,52,44,0.14)] rounded-lg p-8 no-underline text-[#3a342c] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(58,52,44,0.2)] hover:border-[#9caa8c] group"
+                className="bg-[#f8f3e9] border border-[rgba(58,52,44,0.14)] rounded-lg p-8 no-underline text-[#3a342c] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(58,52,44,0.2)] hover:border-[#2D7D4A] group"
               >
                 <div className="aspect-[4/3] rounded mb-6 relative overflow-hidden">
                   {service.type === "slider" ? (
@@ -128,7 +128,7 @@ export function Services() {
                     <ResidentialGallery />
                   ) : (
                     <>
-                      <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
+                      <div className="absolute top-2 right-2 bg-[rgba(212,175,55,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
                         Swap Image
                       </div>
                       <div
@@ -137,7 +137,7 @@ export function Services() {
                     </>
                   )}
                 </div>
-                <span className="font-[var(--font-instrument)] text-[22px] text-[#c97954] mb-1">
+                <span className="font-[var(--font-instrument)] text-[22px] text-[#D4AF37] mb-1">
                   {service.number}
                 </span>
                 <h3 className="font-[var(--font-dm-serif)] text-[30px] font-medium tracking-tight mb-3">
@@ -146,7 +146,7 @@ export function Services() {
                 <p className="text-[15.5px] leading-relaxed text-[#5e564a] flex-1 mb-5">
                   {service.description}
                 </p>
-                <span className="text-[#c97954] font-semibold text-[15px] inline-flex items-center gap-1.5 transition-all duration-300 group-hover:gap-3">
+                <span className="text-[#D4AF37] font-semibold text-[15px] inline-flex items-center gap-1.5 transition-all duration-300 group-hover:gap-3">
                   Get a quote →
                 </span>
               </Link>

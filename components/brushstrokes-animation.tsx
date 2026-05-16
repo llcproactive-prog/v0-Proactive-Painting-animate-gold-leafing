@@ -32,7 +32,7 @@ export function BrushstrokesAnimation() {
     window.addEventListener("resize", resizeCanvas)
 
     // Brand colors - warm painting tones
-    const colors = ["#c97954", "#d4af37", "#6e7d5e", "#e8b4a8", "#b8860b"]
+    const colors = ["#D4AF37", "#2D7D4A", "#2DD4BF", "#e8b4a8", "#b8860b"]
 
     function generateBrushPath(startX: number, startY: number, direction: number): { x: number; y: number; pressure: number }[] {
       const points: { x: number; y: number; pressure: number }[] = []
