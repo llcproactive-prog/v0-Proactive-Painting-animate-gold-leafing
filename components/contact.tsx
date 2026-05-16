@@ -11,9 +11,54 @@ export function Contact() {
     city: "",
     details: "",
   })
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [message, setMessage] = useState("")
 
-  const handleSubmit = () => {
-    alert("Form needs to be wired up to your email service or Formspree.")
+  const handleSubmit = async () => {
+    // Validate required fields
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      setStatus("error")
+      setMessage("Please enter your name and phone number.")
+      return
+    }
+
+    setStatus("loading")
+    setMessage("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setStatus("success")
+        setMessage(data.message || "Quote request sent! We'll be in touch soon.")
+        // Reset form
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          service: "Interior",
+          city: "",
+          details: "",
+        })
+        
+        // Also open mailto as backup to ensure delivery
+        if (data.mailtoLink) {
+          window.open(data.mailtoLink, "_blank")
+        }
+      } else {
+        setStatus("error")
+        setMessage(data.error || "Something went wrong. Please try again or call us.")
+      }
+    } catch {
+      setStatus("error")
+      setMessage("Failed to send. Please call us at (408) 516-7750.")
+    }
   }
 
   return (
@@ -148,13 +193,21 @@ export function Contact() {
           <button
             type="button"
             onClick={handleSubmit}
-            className="w-full bg-[#D4AF37] text-[#f8f3e9] border-none py-4 text-base font-bold cursor-pointer mt-2 rounded-full hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all"
+            disabled={status === "loading"}
+            className="w-full bg-[#D4AF37] text-[#f8f3e9] border-none py-4 text-base font-bold cursor-pointer mt-2 rounded-full hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
           >
-            Send it →
+            {status === "loading" ? "Sending..." : "Send it →"}
           </button>
-          <p className="font-[var(--font-instrument)] text-[17px] text-[#2DD4BF] mt-4 text-center">
-            we usually reply same day
-          </p>
+          {message && (
+            <p className={`text-[15px] mt-4 text-center ${status === "success" ? "text-[#2D7D4A]" : "text-red-600"}`}>
+              {message}
+            </p>
+          )}
+          {status !== "success" && (
+            <p className="font-[var(--font-instrument)] text-[17px] text-[#2DD4BF] mt-4 text-center">
+              we usually reply same day
+            </p>
+          )}
         </div>
       </div>
     </section>
