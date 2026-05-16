@@ -158,78 +158,104 @@ export function BeforeAfterSlider({
             transition: "transform 0.2s ease",
           }}
         >
-          {/* Brush ferrule (metal band) */}
-          <div
-            className="rounded-sm flex items-center justify-center"
-            style={{
-              width: 40,
-              height: 16,
-              background: "linear-gradient(180deg, #e8e0d0 0%, #c8b89a 50%, #b8a882 100%)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2)",
-            }}
-          >
-            <div className="w-full border-t border-[rgba(0,0,0,0.15)]" />
-          </div>
-          {/* Sash brush bristles — dense and realistic */}
-          <svg width="48" height="38" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Bristle base rectangle */}
-            <rect x="1" y="0" width="46" height="5" fill="#d4c4b0" rx="2" />
+          {/* Dense bristles */}
+          <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Vertical bristle lines — densely packed */}
+            <line x1="4" y1="0" x2="3.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="6" y1="0" x2="5.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="8" y1="0" x2="8.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="10" y1="0" x2="9.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="12" y1="0" x2="12.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="14" y1="0" x2="13.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="16" y1="0" x2="16.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="18" y1="0" x2="17.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="20" y1="0" x2="20.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="22" y1="0" x2="21.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="24" y1="0" x2="24.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="26" y1="0" x2="25.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="28" y1="0" x2="28.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="30" y1="0" x2="29.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="32" y1="0" x2="32.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="34" y1="0" x2="33.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="36" y1="0" x2="36.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="38" y1="0" x2="37.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="40" y1="0" x2="40.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="42" y1="0" x2="41.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="44" y1="0" x2="44.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="46" y1="0" x2="45.9" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="48" y1="0" x2="48.1" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="50" y1="0" x2="49.8" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
+            <line x1="52" y1="0" x2="52.2" y2="38" stroke="url(#bristleGradient)" strokeWidth="0.85" strokeLinecap="round" opacity="0.9" />
             
-            {/* Left edge bristles */}
-            <path d="M 4 5 Q 2 10, 1 17 Q 0 25, 2 33 Q 3 36, 4 38" fill="url(#bristle-dark)" />
-            <path d="M 7 5 Q 5 11, 4 19 Q 3 27, 5 35 Q 6 37, 7 38" fill="url(#bristle-dark)" />
+            {/* Metal ferrule band */}
+            <rect x="2" y="36" width="52" height="8" fill="url(#ferruleGradient)" rx="1" />
+            <line x1="2" y1="37" x2="54" y2="37" stroke="rgba(255,255,255,0.4)" strokeWidth="0.5" />
+            <line x1="2" y1="43" x2="54" y2="43" stroke="rgba(0,0,0,0.2)" strokeWidth="0.5" />
             
-            {/* Left-center bristles */}
-            <path d="M 10 5 Q 8 13, 7 22 Q 6 30, 8 37 Q 9 38, 10 38" fill="url(#bristle-medium)" />
-            <path d="M 13 5 Q 11 14, 10 24 Q 9 32, 11 38" fill="url(#bristle-medium)" />
-            <path d="M 16 5 Q 14 15, 13 26 Q 12 34, 14 38" fill="url(#bristle-light)" />
-            
-            {/* Center bristles - main mass */}
-            <path d="M 19 5 Q 17 16, 16 28 Q 15 35, 17 38" fill="url(#bristle-light)" />
-            <path d="M 22 5 Q 20 17, 19 30 Q 18 36, 20 38" fill="url(#bristle-center)" />
-            <path d="M 25 5 Q 23 17, 22 30 Q 21 36, 23 38" fill="url(#bristle-center)" />
-            <path d="M 28 5 Q 26 16, 25 28 Q 24 35, 26 38" fill="url(#bristle-light)" />
-            
-            {/* Right-center bristles */}
-            <path d="M 31 5 Q 29 15, 28 26 Q 27 34, 29 38" fill="url(#bristle-light)" />
-            <path d="M 34 5 Q 32 14, 31 24 Q 30 32, 32 38" fill="url(#bristle-medium)" />
-            <path d="M 37 5 Q 35 13, 34 22 Q 33 30, 35 37 Q 36 38, 37 38" fill="url(#bristle-medium)" />
-            
-            {/* Right edge bristles */}
-            <path d="M 40 5 Q 42 11, 43 19 Q 44 27, 42 35 Q 41 37, 40 38" fill="url(#bristle-dark)" />
-            <path d="M 43 5 Q 45 10, 46 17 Q 47 25, 45 33 Q 44 36, 43 38" fill="url(#bristle-dark)" />
-            
-            {/* Subtle highlight */}
-            <ellipse cx="24" cy="18" rx="8" ry="12" fill="rgba(255,255,255,0.15)" />
-            
-            {/* Gradients for depth and realism */}
+            {/* Gradients */}
             <defs>
-              <linearGradient id="bristle-dark" x1="0" y1="0" x2="0" y2="38">
-                <stop offset="0%" stopColor="#5a9acc" />
-                <stop offset="35%" stopColor="#3d7aa8" />
-                <stop offset="70%" stopColor="#2d5f8f" />
-                <stop offset="100%" stopColor="#1f4566" />
-              </linearGradient>
-              <linearGradient id="bristle-medium" x1="0" y1="0" x2="0" y2="38">
-                <stop offset="0%" stopColor="#6b9fce" />
-                <stop offset="35%" stopColor="#4a90c4" />
-                <stop offset="70%" stopColor="#2d6ea8" />
+              <linearGradient id="bristleGradient" x1="0" y1="0" x2="0" y2="38">
+                <stop offset="0%" stopColor="#3d7aa8" />
+                <stop offset="50%" stopColor="#2d5f8f" />
                 <stop offset="100%" stopColor="#1a4f7a" />
               </linearGradient>
-              <linearGradient id="bristle-light" x1="0" y1="0" x2="0" y2="38">
-                <stop offset="0%" stopColor="#7daad4" />
-                <stop offset="35%" stopColor="#5a9acc" />
-                <stop offset="70%" stopColor="#3d7aa8" />
-                <stop offset="100%" stopColor="#2d5f8f" />
-              </linearGradient>
-              <linearGradient id="bristle-center" x1="0" y1="0" x2="0" y2="38">
-                <stop offset="0%" stopColor="#5a9acc" />
-                <stop offset="40%" stopColor="#3d7aa8" />
-                <stop offset="75%" stopColor="#2d6ea8" />
-                <stop offset="100%" stopColor="#1a4f7a" />
+              <linearGradient id="ferruleGradient" x1="0" y1="36" x2="0" y2="44">
+                <stop offset="0%" stopColor="#d0d0d0" />
+                <stop offset="50%" stopColor="#a8a8a8" />
+                <stop offset="100%" stopColor="#808080" />
               </linearGradient>
             </defs>
           </svg>
+
+          {/* Wooden handle */}
+          <div
+            style={{
+              width: 44,
+              height: 56,
+              background: "linear-gradient(135deg, #d4a574 0%, #c9945f 30%, #b8845c 50%, #a67449 70%, #8f6340 100%)",
+              borderRadius: "8px 8px 16px 16px",
+              boxShadow: "inset 0 2px 4px rgba(255,255,255,0.3), inset -2px 0 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.35)",
+              position: "relative",
+              overflow: "hidden",
+              marginTop: -2,
+            }}
+          >
+            {/* Wood grain lines */}
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              background: `repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                rgba(0,0,0,0.05) 2px,
+                transparent 4px,
+                rgba(255,255,255,0.03) 6px
+              )`,
+            }} />
+            
+            {/* Highlight edge */}
+            <div style={{
+              position: "absolute",
+              top: 0,
+              left: 4,
+              width: 12,
+              height: "100%",
+              background: "linear-gradient(90deg, rgba(255,255,255,0.25) 0%, transparent 100%)",
+            }} />
+            
+            {/* Hole near bottom */}
+            <div style={{
+              position: "absolute",
+              width: 6,
+              height: 6,
+              borderRadius: "50%",
+              background: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(0,0,0,0.4))",
+              bottom: 12,
+              left: "50%",
+              transform: "translateX(-50%)",
+              boxShadow: "inset 0 1px 2px rgba(0,0,0,0.5)",
+            }} />
+          </div>
         </div>
       </div>
 
