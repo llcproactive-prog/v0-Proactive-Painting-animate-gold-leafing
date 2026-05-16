@@ -15,8 +15,8 @@ export function Gallery() {
   return (
     <section id="work" className="py-20 bg-[#f0e8d8]">
       <div className="max-w-[1180px] mx-auto px-7">
-        <Reveal className="text-center mb-12">
-          <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-2 block">recent work</span>
+        <Reveal className="text-center mb-10">
+          <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-1 block">recent work</span>
           <h2 className="font-[var(--font-fraunces)] text-[clamp(34px,5vw,58px)] font-normal leading-tight tracking-tight text-balance">
             A few <em className="italic text-[#6e7d5e]">homes</em> we&apos;ve loved.
           </h2>
