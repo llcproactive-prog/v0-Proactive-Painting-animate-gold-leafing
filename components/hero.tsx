@@ -6,21 +6,17 @@ export function Hero() {
       <div className="max-w-[1180px] mx-auto px-7 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-[60px] items-center">
           <div>
-            <span className="font-[var(--font-caveat)] text-[32px] text-[#c97954] mb-2 inline-block -rotate-1">
-              Hi, I&apos;m Ray —
-            </span>
+
             <h1 className="font-[var(--font-fraunces)] text-[clamp(44px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-7 text-[#3a342c]">
               A{" "}
               <span className="font-[var(--font-caveat)] font-bold text-[#6e7d5e] text-[1.08em] inline-block -rotate-2 mx-1">
                 family
               </span>{" "}
               painting business, taking care of{" "}
-              <em className="italic font-light text-[#c97954]">Bay Area homes</em> since 2008.
+              <em className="italic font-light text-[#c97954]">Bay Area homes</em>.
             </h1>
             <p className="text-[19px] leading-relaxed text-[#5e564a] max-w-[500px] mb-9">
-              My wife Patty and I run Proactive Painting together. No call centers, no salespeople — when you
-              call, you talk to me. Interior, exterior, residential. Done carefully, the way I&apos;d paint my
-              own home.
+              Our team brings 17+ years of experience serving the Bay Area. No call centers, no salespeople — when you call, you talk to us directly. Interior, exterior, residential. Done carefully, the way we&apos;d paint our own homes.
             </p>
 
             <div className="flex gap-4 items-center flex-wrap">
@@ -66,10 +62,10 @@ export function Hero() {
             </div>
             <div className="absolute bottom-6 left-6 right-6 bg-[rgba(248,243,233,0.96)] p-3.5 rounded -rotate-[1.5deg]">
               <div className="font-[var(--font-caveat)] text-2xl text-[#3a342c] leading-none">
-                Ray &amp; Patty
+                Proactive Painting
               </div>
               <div className="text-xs text-[#5e564a] tracking-widest uppercase mt-1">
-                Owners · Proactive Painting
+                Professional Excellence
               </div>
             </div>
           </div>
