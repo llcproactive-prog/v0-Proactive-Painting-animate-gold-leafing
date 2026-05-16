@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 import { Reveal } from "./reveal"
 import { BeforeAfterSlider } from "./before-after-slider"
 
@@ -31,6 +32,8 @@ const services = [
 ]
 
 export function Services() {
+  const [videoMuted, setVideoMuted] = useState(true)
+
   return (
     <section id="services" className="py-24 pb-16">
       <div className="max-w-[1180px] mx-auto px-7">
@@ -61,14 +64,36 @@ export function Services() {
                       />
                     </div>
                   ) : service.type === "video" ? (
-                    <video
-                      src={service.videoSrc}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    <div className="absolute inset-0 relative">
+                      <video
+                        src={service.videoSrc}
+                        autoPlay
+                        loop
+                        muted={videoMuted}
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault()
+                          setVideoMuted(!videoMuted)
+                        }}
+                        className="absolute bottom-3 right-3 z-10 bg-[rgba(58,52,44,0.7)] hover:bg-[rgba(58,52,44,0.9)] text-[#f8f3e9] p-2 rounded-full transition-all duration-200 hover:scale-110"
+                        title={videoMuted ? "Unmute" : "Mute"}
+                      >
+                        {videoMuted ? (
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.5 4.06c0-1.336-1.616-2.256-2.73-1.72l-5.24 2.97A4 4 0 004 9.604v4.792a4 4 0 001.53 3.134l5.24 2.97c1.114.536 2.73-.384 2.73-1.72V4.06zM18.584 5.106a.75.75 0 011.06 0c2.942 2.941 2.942 7.708 0 10.65a.75.75 0 11-1.06-1.061 6.5 6.5 0 000-8.529.75.75 0 010-1.06z" />
+                            <path d="M16.009 5.51a.75.75 0 011.06.001c1.95 1.951 1.95 5.12 0 7.07a.75.75 0 11-1.061-1.06 4 4 0 000-5.951.75.75 0 01.001-1.06z" />
+                          </svg>
+                        ) : (
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.5 4.06c0-1.336-1.616-2.256-2.73-1.72l-5.24 2.97A4 4 0 004 9.604v4.792a4 4 0 001.53 3.134l5.24 2.97c1.114.536 2.73-.384 2.73-1.72V4.06z" />
+                            <path d="M15.75 7.5a.75.75 0 011.06 0l2.19 2.19 2.19-2.19a.75.75 0 111.06 1.06l-2.19 2.19 2.19 2.19a.75.75 0 11-1.06 1.06l-2.19-2.19-2.19 2.19a.75.75 0 11-1.06-1.06l2.19-2.19-2.19-2.19a.75.75 0 010-1.06z" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
                   ) : (
                     <>
                       <div className="absolute top-2 right-2 bg-[rgba(201,121,84,0.95)] text-[#f8f3e9] px-3 py-1.5 text-[10px] tracking-widest uppercase font-bold z-10 rounded-full">
