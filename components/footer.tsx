@@ -7,17 +7,16 @@ export function Footer() {
         <div>
           <div className="font-[var(--font-caveat)] text-[#f0c9a8] text-xl mb-3">Proactive Painting</div>
           <p className="leading-relaxed">
-            A small, family-run painting business in San Jose. Interior, exterior, residential — done with
-            care since 2008.
+            A small, family-run painting business serving the Bay Area. Interior, exterior, residential — done with care by Raymond and Patty Gil since 2018.
           </p>
         </div>
         <div>
           <div className="font-[var(--font-caveat)] text-[#f0c9a8] text-xl mb-3">Get in touch</div>
           <a
-            href="tel:+14085551234"
+            href="tel:+14085167750"
             className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#f0c9a8] transition-colors"
           >
-            (408) 555-1234
+            (408) 516-7750
           </a>
           <a
             href="mailto:llcproactive@gmail.com"
@@ -44,7 +43,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-[rgba(248,243,233,0.12)] mt-10 pt-5 text-center text-[13px] opacity-60 max-w-[1180px] mx-auto px-7">
-        &copy; 2026 Proactive Painting · Made with care in San Jose
+        © 2026 Proactive Painting · Raymond Gil · Made with care in San Jose
       </div>
     </footer>
   )

@@ -23,8 +23,8 @@ const caveat = Caveat({
 })
 
 export const metadata: Metadata = {
-  title: 'Proactive Painting — A Family Painting Business in San Jose',
-  description: "Hi, I'm Ray. My wife Patty and I have been painting Bay Area homes since 2008. Interior, exterior, and residential painting done right. Licensed CSLB C-33.",
+  title: 'Proactive Painting — Raymond Gil · Bay Area Painting Since 2018',
+  description: "Hi, I'm Raymond Gil. My wife Patty and I have been running Proactive Painting since 2018. Interior, exterior, and residential painting in the Bay Area. Licensed CSLB C-33.",
   generator: 'v0.app',
   icons: {
     icon: [

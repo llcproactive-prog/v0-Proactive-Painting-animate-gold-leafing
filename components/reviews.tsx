@@ -2,22 +2,22 @@ import { Reveal } from "./reveal"
 
 const reviews = [
   {
-    text: "Ray and his crew repainted our whole exterior. The prep work was meticulous before a single coat went on. Two years later it still looks brand new.",
-    name: "Jennifer M.",
-    location: "Willow Glen",
-    initial: "J",
+    text: "Raymond and his team did an excellent job of exterior painting. They started work on time and finished everything within the timeline specified in the contract. They also took care of some inside work outside the contract and did this for free. We are very happy with their work and will use their services again if a need arises.",
+    name: "Prasad K.",
+    location: "Exterior painting",
+    initial: "P",
   },
   {
-    text: "They showed up when they said they would, finished on schedule, and left the house cleaner than they found it. I've worked with three painters before — none came close.",
-    name: "David R.",
-    location: "Cupertino",
-    initial: "D",
+    text: "Proactive painted the exterior wood on my house in Menlo Park — windows, doors, eaves, garage door. Their prep work was absolutely outstanding, as was their precision in spray painting, cleanup, and attention to customer satisfaction. They will be my go-to company for painting.",
+    name: "Michael C.",
+    location: "Menlo Park",
+    initial: "M",
   },
   {
-    text: "Honest quote, no surprise charges. Ray walked me through every decision — color, sheen, prep. Felt like a friend helping out, not a contractor.",
-    name: "Anita P.",
-    location: "Almaden Valley",
-    initial: "A",
+    text: "I had a wonderful experience working with Proactive Painting. Raymond was extremely professional, caring, and very detail-oriented, which really showed in the quality of his work. His pricing was very reasonable, and the level of customer service he provided truly stood out.",
+    name: "Farinaz A.",
+    location: "Local Guide · Google Reviews",
+    initial: "F",
   },
 ]
 

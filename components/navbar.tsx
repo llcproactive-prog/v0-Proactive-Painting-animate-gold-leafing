@@ -8,8 +8,13 @@ export function Navbar() {
           <span className="w-11 h-11 bg-[#6e7d5e] text-[#f8f3e9] grid place-items-center font-[var(--font-fraunces)] font-medium text-[22px] rounded-full italic">
             P
           </span>
-          <span className="font-[var(--font-fraunces)] text-xl font-medium text-[#3a342c] tracking-tight">
-            Proactive Painting
+          <span className="flex flex-col leading-none">
+            <span className="font-[var(--font-fraunces)] text-xl font-medium text-[#3a342c] tracking-tight">
+              Proactive Painting
+            </span>
+            <span className="font-[var(--font-caveat)] text-[13px] text-[#c97954] mt-0.5">
+              Raymond Gil · serving the Bay Area since 2018
+            </span>
           </span>
         </Link>
 

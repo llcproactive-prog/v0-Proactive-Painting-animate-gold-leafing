@@ -7,16 +7,19 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-[60px] items-center">
           <div>
 
+            <span className="font-[var(--font-caveat)] text-[32px] text-[#c97954] mb-2 inline-block -rotate-1">
+              Hi, I&apos;m Raymond —
+            </span>
             <h1 className="font-[var(--font-fraunces)] text-[clamp(44px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-7 text-[#3a342c]">
               A{" "}
               <span className="font-[var(--font-caveat)] font-bold text-[#6e7d5e] text-[1.08em] inline-block -rotate-2 mx-1">
                 family
               </span>{" "}
               painting business, taking care of{" "}
-              <em className="italic font-light text-[#c97954]">Bay Area homes</em>.
+              <em className="italic font-light text-[#c97954]">Bay Area homes</em> since 2018.
             </h1>
             <p className="text-[19px] leading-relaxed text-[#5e564a] max-w-[500px] mb-9">
-              Our team brings 17+ years of experience serving the Bay Area. No call centers, no salespeople — when you call, you talk to us directly. Interior, exterior, residential. Done carefully, the way we&apos;d paint our own homes.
+              I&apos;ve been painting Bay Area homes since 2009, and running Proactive Painting since 2018. My wife Patty handles scheduling and keeps everything organized — when you call, you&apos;ll usually get her first, then me. No call centers, no salespeople. Just careful work on interior, exterior, and residential projects, done the way I&apos;d paint my own home.
             </p>
 
             <div className="flex gap-4 items-center flex-wrap">
@@ -29,10 +32,10 @@ export function Hero() {
               <div className="flex flex-col gap-0.5">
                 <span className="font-[var(--font-caveat)] text-[18px] text-[#6e7d5e]">or call us</span>
                 <a
-                  href="tel:+14085551234"
+                  href="tel:+14085167750"
                   className="font-[var(--font-fraunces)] text-[28px] font-medium text-[#3a342c] no-underline tracking-tight hover:text-[#c97954] transition-colors"
                 >
-                  (408) 555-1234
+                  (408) 516-7750
                 </a>
               </div>
             </div>
@@ -50,7 +53,12 @@ export function Hero() {
               <span className="text-[rgba(58,52,44,0.14)]">·</span>
               <div className="flex items-center gap-2 text-sm font-medium">
                 <span className="w-2 h-2 bg-[#c97954] rounded-full" />
-                17 Years in San Jose
+                16 Years Painting
+              </div>
+              <span className="text-[rgba(58,52,44,0.14)]">·</span>
+              <div className="flex items-center gap-2 text-sm font-medium">
+                <span className="w-2 h-2 bg-[#c97954] rounded-full" />
+                Proactive since 2018
               </div>
             </div>
           </div>
@@ -62,10 +70,10 @@ export function Hero() {
             </div>
             <div className="absolute bottom-6 left-6 right-6 bg-[rgba(248,243,233,0.96)] p-3.5 rounded -rotate-[1.5deg]">
               <div className="font-[var(--font-caveat)] text-2xl text-[#3a342c] leading-none">
-                Proactive Painting
+                Raymond &amp; Patty
               </div>
               <div className="text-xs text-[#5e564a] tracking-widest uppercase mt-1">
-                Professional Excellence
+                Owners · Proactive Painting
               </div>
             </div>
           </div>

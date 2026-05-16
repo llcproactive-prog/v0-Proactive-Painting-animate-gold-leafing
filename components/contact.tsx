@@ -31,19 +31,18 @@ export function Contact() {
             about your home.
           </h2>
           <p className="text-[17px] opacity-90 leading-relaxed max-w-[420px] mb-9">
-            Give us a call or send a few details. I&apos;ll personally get back to you within one business day
-            — usually sooner.
+            Give us a call or send a few details. Patty or I will personally get back to you within one business day — usually sooner.
           </p>
 
           <div className="bg-[rgba(248,243,233,0.08)] border border-[rgba(248,243,233,0.2)] rounded-lg p-6 mb-5">
             <div className="font-[var(--font-caveat)] text-xl text-[#f0c9a8] mb-1">
-              call or text Ray directly
+              call or text Raymond directly
             </div>
             <a
-              href="tel:+14085551234"
+              href="tel:+14085167750"
               className="font-[var(--font-fraunces)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#f0c9a8] transition-colors"
             >
-              (408) 555-1234
+              (408) 516-7750
             </a>
             <div className="text-sm opacity-70 mt-1">Mon–Sat · 7am–6pm</div>
           </div>

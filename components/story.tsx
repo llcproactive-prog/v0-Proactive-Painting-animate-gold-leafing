@@ -11,10 +11,10 @@ export function Story() {
           </h2>
           <div className="text-lg leading-relaxed text-[#5e564a] space-y-6">
             <p>
-              I started painting in 2009 with a single truck and a promise: show up when I say I will, ON TIME, do the work right, and treat every house like it&apos;s the only one on my list.
+              I picked up my first paintbrush professionally in 2009. After almost a decade working in the trade, I started Proactive Painting in 2018 with a single truck and a promise: show up when I say I will, do the work right, and treat every house like it&apos;s the only one on my list.
             </p>
             <p>
-              Almost two decades later, that hasn&apos;t changed. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. My standards are high, and our clients tend to stay with us for years.
+              Today it&apos;s a small operation by design. My wife Patty handles scheduling and the back office — she&apos;s usually the first voice you&apos;ll hear. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. Our crew is tight, our standards are high, and our clients tend to come back.
             </p>
             <p>
               If you&apos;re looking for a painting company that responds fast, sticks to the quote, and leaves your home better than they found it — that&apos;s us. I&apos;d love to come see your project.
@@ -22,10 +22,10 @@ export function Story() {
           </div>
           <div className="mt-10 inline-flex flex-col items-center">
             <div className="font-[var(--font-caveat)] text-[38px] text-[#3a342c] leading-none -rotate-3">
-              — Ray
+              — Raymond Gil
             </div>
             <div className="text-[13px] tracking-[0.15em] uppercase text-[#5e564a] mt-3">
-              Founder/Owner, Proactive Painting
+              Owner, Proactive Painting
             </div>
           </div>
         </Reveal>
