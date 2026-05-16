@@ -145,6 +145,60 @@ html {
   animation: gold-pulse 2.2s ease-in-out infinite;
 }
 
+/* Gold text glow and twinkle animation */
+@keyframes gold-text-glow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.3), 0 0 8px rgba(212, 175, 55, 0.2);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.6), 0 0 24px rgba(212, 175, 55, 0.4), 0 0 36px rgba(212, 175, 55, 0.2);
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes gold-twinkle {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.4);
+  }
+  25% {
+    opacity: 0.9;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6), 0 0 16px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 24px rgba(212, 175, 55, 0.5), 0 0 32px rgba(255, 223, 100, 0.3);
+  }
+  75% {
+    opacity: 0.95;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.5), 0 0 12px rgba(212, 175, 55, 0.3);
+  }
+}
+
+@keyframes gold-dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 2px rgba(212, 175, 55, 0.5), 0 0 6px rgba(212, 175, 55, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.8), 0 0 16px rgba(212, 175, 55, 0.5), 0 0 24px rgba(255, 223, 100, 0.3);
+    transform: scale(1.15);
+  }
+}
+
+.gold-glow {
+  animation: gold-text-glow 3s ease-in-out infinite;
+}
+
+.gold-twinkle {
+  animation: gold-twinkle 2.5s ease-in-out infinite;
+}
+
+.gold-dot {
+  animation: gold-dot-pulse 2s ease-in-out infinite;
+}
+
 /* Reveal animation for scroll */
 .reveal {
   opacity: 0;

@@ -97,7 +97,7 @@ export function Services() {
     <section id="services" className="py-24 pb-16">
       <div className="max-w-[1180px] mx-auto px-7">
         <Reveal className="text-center mb-12">
-          <span className="font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">what we do</span>
+          <span className="gold-twinkle font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">what we do</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
             Three things, done <em className="text-[#2D7D4A]">well.</em>
           </h2>
@@ -137,7 +137,7 @@ export function Services() {
                     </>
                   )}
                 </div>
-                <span className="font-[var(--font-instrument)] text-[22px] text-[#D4AF37] mb-1">
+                <span className="gold-twinkle font-[var(--font-instrument)] text-[22px] text-[#D4AF37] mb-1">
                   {service.number}
                 </span>
                 <h3 className="font-[var(--font-dm-serif)] text-[30px] font-medium tracking-tight mb-3">
@@ -146,7 +146,7 @@ export function Services() {
                 <p className="text-[15.5px] leading-relaxed text-[#5e564a] flex-1 mb-5">
                   {service.description}
                 </p>
-                <span className="text-[#D4AF37] font-semibold text-[15px] inline-flex items-center gap-1.5 transition-all duration-300 group-hover:gap-3">
+                <span className="gold-glow text-[#D4AF37] font-semibold text-[15px] inline-flex items-center gap-1.5 transition-all duration-300 group-hover:gap-3">
                   Get a quote →
                 </span>
               </Link>

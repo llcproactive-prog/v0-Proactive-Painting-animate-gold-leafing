@@ -12,7 +12,7 @@ export function Navbar() {
             <span className="font-[var(--font-dm-serif)] text-xl font-medium text-[#3a342c] tracking-tight">
               Proactive Painting
             </span>
-            <span className="font-[var(--font-instrument)] text-[13px] text-[#D4AF37] mt-0.5">
+            <span className="gold-twinkle font-[var(--font-instrument)] text-[13px] text-[#D4AF37] mt-0.5">
               Raymond Gil · serving the Bay Area since 2018
             </span>
           </span>
