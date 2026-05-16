@@ -1,25 +1,26 @@
 import type { Metadata } from 'next'
-import { Nunito, Fraunces, Caveat } from 'next/font/google'
+import { Inter, DM_Serif_Display, Instrument_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const nunito = Nunito({ 
+const inter = Inter({ 
   subsets: ["latin"],
-  variable: '--font-nunito',
+  variable: '--font-inter',
   display: 'swap',
 })
 
-const fraunces = Fraunces({ 
+const dmSerifDisplay = DM_Serif_Display({ 
   subsets: ["latin"],
-  variable: '--font-fraunces',
+  variable: '--font-dm-serif',
   display: 'swap',
+  weight: '400',
 })
 
-const caveat = Caveat({ 
+const instrumentSans = Instrument_Sans({ 
   subsets: ["latin"],
-  variable: '--font-caveat',
+  variable: '--font-instrument',
   display: 'swap',
-  weight: ['500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -52,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-[#f8f3e9]">
-      <body className={`${nunito.variable} ${fraunces.variable} ${caveat.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${dmSerifDisplay.variable} ${instrumentSans.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

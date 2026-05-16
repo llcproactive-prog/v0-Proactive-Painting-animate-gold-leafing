@@ -22,10 +22,10 @@ export function Contact() {
 
       <div className="max-w-[1180px] mx-auto px-7 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 relative">
         <div>
-          <span className="font-[var(--font-caveat)] text-2xl text-[#f0c9a8] mb-2 block">get in touch</span>
-          <h2 className="font-[var(--font-fraunces)] text-[clamp(36px,5vw,60px)] leading-relaxed tracking-tight font-normal mb-6">
+          <span className="font-[var(--font-instrument)] text-2xl text-[#f0c9a8] mb-2 block">get in touch</span>
+          <h2 className="font-[var(--font-dm-serif)] text-[clamp(36px,5vw,60px)] leading-relaxed tracking-tight font-normal mb-6">
             Let&apos;s{" "}
-            <span className="font-[var(--font-caveat)] font-bold text-[#f0c9a8] -rotate-2 inline-block text-[1.05em]">
+            <span className="font-[var(--font-instrument)] font-bold text-[#f0c9a8] -rotate-2 inline-block text-[1.05em]">
               talk
             </span>{" "}
             about your home.
@@ -35,12 +35,12 @@ export function Contact() {
           </p>
 
           <div className="bg-[rgba(248,243,233,0.08)] border border-[rgba(248,243,233,0.2)] rounded-lg p-6 mb-5">
-            <div className="font-[var(--font-caveat)] text-xl text-[#f0c9a8] mb-1">
+            <div className="font-[var(--font-instrument)] text-xl text-[#f0c9a8] mb-1">
               call or text Raymond directly
             </div>
             <a
               href="tel:+14085167750"
-              className="font-[var(--font-fraunces)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#f0c9a8] transition-colors"
+              className="font-[var(--font-dm-serif)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#f0c9a8] transition-colors"
             >
               (408) 516-7750
             </a>
@@ -51,26 +51,26 @@ export function Contact() {
             <span className="opacity-70 text-sm">Email</span>
             <a
               href="mailto:llcproactive@gmail.com"
-              className="text-[#f8f3e9] no-underline font-[var(--font-fraunces)] text-lg hover:text-[#f0c9a8] transition-colors"
+              className="text-[#f8f3e9] no-underline font-[var(--font-dm-serif)] text-lg hover:text-[#f0c9a8] transition-colors"
             >
               llcproactive@gmail.com
             </a>
           </div>
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">Service area</span>
-            <span className="font-[var(--font-fraunces)] text-lg">San Jose &amp; Bay Area</span>
+            <span className="font-[var(--font-dm-serif)] text-lg">San Jose &amp; Bay Area</span>
           </div>
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">License</span>
-            <span className="font-[var(--font-fraunces)] text-lg">CSLB C-33</span>
+            <span className="font-[var(--font-dm-serif)] text-lg">CSLB C-33</span>
           </div>
         </div>
 
         <div className="bg-[#f8f3e9] text-[#3a342c] p-10 rounded-lg shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)]">
-          <div className="font-[var(--font-caveat)] text-[22px] text-[#c97954] mb-1.5">
+          <div className="font-[var(--font-instrument)] text-[22px] text-[#c97954] mb-1.5">
             tell us about your project
           </div>
-          <div className="font-[var(--font-fraunces)] text-[26px] font-medium mb-7 tracking-tight">
+          <div className="font-[var(--font-dm-serif)] text-[26px] font-medium mb-7 tracking-tight">
             Request a free quote
           </div>
 
@@ -152,7 +152,7 @@ export function Contact() {
           >
             Send it →
           </button>
-          <p className="font-[var(--font-caveat)] text-[17px] text-[#6e7d5e] mt-4 text-center">
+          <p className="font-[var(--font-instrument)] text-[17px] text-[#6e7d5e] mt-4 text-center">
             we usually reply same day
           </p>
         </div>

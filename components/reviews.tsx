@@ -26,8 +26,8 @@ export function Reviews() {
     <section id="reviews" className="py-24">
       <div className="max-w-[1180px] mx-auto px-7">
         <Reveal className="text-center mb-12">
-          <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-2 block">kind words</span>
-          <h2 className="font-[var(--font-fraunces)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
+          <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-2 block">kind words</span>
+          <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
             From our <em className="italic text-[#6e7d5e]">neighbors.</em>
           </h2>
         </Reveal>
@@ -36,20 +36,20 @@ export function Reviews() {
           {reviews.map((review, i) => (
             <Reveal key={review.name} delay={i * 100}>
               <div className="bg-[#f8f3e9] border border-[rgba(58,52,44,0.14)] rounded-lg p-9 relative">
-                <div className="absolute -top-5 left-5 font-[var(--font-fraunces)] text-[100px] text-[#c97954] leading-none font-normal">
+                <div className="absolute -top-5 left-5 font-[var(--font-dm-serif)] text-[100px] text-[#c97954] leading-none font-normal">
                   &ldquo;
                 </div>
                 <div className="text-[#c97954] text-base tracking-[3px] mb-4">★★★★★</div>
-                <p className="font-[var(--font-fraunces)] text-[19px] leading-snug font-normal tracking-tight mb-6 text-[#3a342c]">
+                <p className="font-[var(--font-dm-serif)] text-[19px] leading-snug font-normal tracking-tight mb-6 text-[#3a342c]">
                   {review.text}
                 </p>
                 <div className="flex items-center gap-3 pt-5 border-t border-[rgba(58,52,44,0.14)]">
-                  <div className="w-11 h-11 rounded-full bg-[#9caa8c] text-[#f8f3e9] grid place-items-center font-[var(--font-fraunces)] font-medium text-lg">
+                  <div className="w-11 h-11 rounded-full bg-[#9caa8c] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-medium text-lg">
                     {review.initial}
                   </div>
                   <div>
                     <div className="font-semibold text-[#3a342c] text-[15px]">{review.name}</div>
-                    <div className="text-[#5e564a] font-[var(--font-caveat)] text-base">{review.location}</div>
+                    <div className="text-[#5e564a] font-[var(--font-instrument)] text-base">{review.location}</div>
                   </div>
                 </div>
               </div>

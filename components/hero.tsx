@@ -7,12 +7,12 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-[60px] items-center">
           <div>
 
-            <span className="font-[var(--font-caveat)] text-[32px] text-[#c97954] mb-2 inline-block -rotate-1">
+            <span className="font-[var(--font-instrument)] text-[32px] text-[#c97954] mb-2 inline-block -rotate-1">
               Hi I&apos;m Raymond with Proactive Painting
             </span>
-            <h1 className="font-[var(--font-fraunces)] text-[clamp(44px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-7 text-[#3a342c]">
+            <h1 className="font-[var(--font-dm-serif)] text-[clamp(44px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-7 text-[#3a342c]">
               A{" "}
-              <span className="font-[var(--font-caveat)] font-bold text-[#6e7d5e] text-[1.08em] inline-block -rotate-2 mx-1">
+              <span className="font-[var(--font-instrument)] font-bold text-[#6e7d5e] text-[1.08em] inline-block -rotate-2 mx-1">
                 family
               </span>{" "}
               painting business, taking care of{" "}
@@ -30,10 +30,10 @@ export function Hero() {
                 Get a Free Quote →
               </Link>
               <div className="flex flex-col gap-0.5">
-                <span className="font-[var(--font-caveat)] text-[18px] text-[#6e7d5e]">or call us</span>
+                <span className="font-[var(--font-instrument)] text-[18px] text-[#6e7d5e]">or call us</span>
                 <a
                   href="tel:+14085167750"
-                  className="font-[var(--font-fraunces)] text-[28px] font-medium text-[#3a342c] no-underline tracking-tight hover:text-[#c97954] transition-colors"
+                  className="font-[var(--font-dm-serif)] text-[28px] font-medium text-[#3a342c] no-underline tracking-tight hover:text-[#c97954] transition-colors"
                 >
                   (408) 516-7750
                 </a>
@@ -69,7 +69,7 @@ export function Hero() {
               Swap Photo
             </div>
             <div className="absolute bottom-6 left-6 right-6 bg-[rgba(248,243,233,0.96)] p-3.5 rounded -rotate-[1.5deg]">
-              <div className="font-[var(--font-caveat)] text-2xl text-[#3a342c] leading-none">
+              <div className="font-[var(--font-instrument)] text-2xl text-[#3a342c] leading-none">
                 Raymond &amp; Patty
               </div>
               <div className="text-xs text-[#5e564a] tracking-widest uppercase mt-1">

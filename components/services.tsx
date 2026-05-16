@@ -97,8 +97,8 @@ export function Services() {
     <section id="services" className="py-24 pb-16">
       <div className="max-w-[1180px] mx-auto px-7">
         <Reveal className="text-center mb-12">
-          <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-2 block">what we do</span>
-          <h2 className="font-[var(--font-fraunces)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
+          <span className="font-[var(--font-instrument)] text-2xl text-[#c97954] mb-2 block">what we do</span>
+          <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
             Three things, done <em className="italic text-[#6e7d5e]">well.</em>
           </h2>
         </Reveal>
@@ -137,10 +137,10 @@ export function Services() {
                     </>
                   )}
                 </div>
-                <span className="font-[var(--font-caveat)] text-[22px] text-[#c97954] mb-1">
+                <span className="font-[var(--font-instrument)] text-[22px] text-[#c97954] mb-1">
                   {service.number}
                 </span>
-                <h3 className="font-[var(--font-fraunces)] text-[30px] font-medium tracking-tight mb-3">
+                <h3 className="font-[var(--font-dm-serif)] text-[30px] font-medium tracking-tight mb-3">
                   {service.title}
                 </h3>
                 <p className="text-[15.5px] leading-relaxed text-[#5e564a] flex-1 mb-5">

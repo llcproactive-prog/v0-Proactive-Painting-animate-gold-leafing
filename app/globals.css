@@ -43,9 +43,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Nunito', sans-serif;
-  --font-serif: 'Fraunces', serif;
-  --font-hand: 'Caveat', cursive;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-accent: 'Instrument Sans', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
