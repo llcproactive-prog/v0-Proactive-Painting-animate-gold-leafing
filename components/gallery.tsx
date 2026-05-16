@@ -46,6 +46,8 @@ const exteriorStaining = {
   beforeLabel: "Raw Wood",
   afterLabel: "Stained",
 }
+
+const interiorSlider = {
   beforeSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3126-57pDbLdUJeHeTDgrkzCTkbmNnTc6kJ.jpeg",
   afterSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3127-21ifrnlnYHRs1IdG6rYSnc1vKxdq5G.jpeg",
   beforeAlt: "Interior living room painted blue-grey with white crown molding and hardwood floors",
@@ -53,6 +55,11 @@ const exteriorStaining = {
   label: "Interior Painting",
   beforeLabel: "Living Room",
   afterLabel: "Dining Room",
+}
+
+const videoTile = {
+  src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8675_compressed-7joecMwQIi0wj4VllyNpL7lJLqzkn6.mp4",
+  label: "Project Timelapse",
 }
 
 const rotations = ["-rotate-1", "", "rotate-1", "-rotate-[0.5deg]", "rotate-1"]
@@ -123,9 +130,36 @@ export function Gallery() {
             />
           </Reveal>
 
+          {/* Video tile */}
+          <Reveal delay={480}>
+            <div className="relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group cursor-pointer">
+              <video
+                src={videoTile.src}
+                className="absolute inset-0 w-full h-full object-cover"
+                muted
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => {
+                  e.currentTarget.pause()
+                  e.currentTarget.currentTime = 0
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(58,52,44,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-14 h-14 bg-[rgba(248,243,233,0.95)] rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#3a342c] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <span className="text-[#f8f3e9] text-xs tracking-widest uppercase font-bold">{videoTile.label}</span>
+              </div>
+            </div>
+          </Reveal>
+
           {/* Last photo - deck staining */}
-          <Reveal delay={420}>
-            <div className={`relative aspect-square overflow-hidden rounded-md bg-[#c8d2bd] group ${rotations[4]}`}>
+          <Reveal delay={540}>
               <img
                 src={photos[4].src}
                 alt={photos[4].alt}
