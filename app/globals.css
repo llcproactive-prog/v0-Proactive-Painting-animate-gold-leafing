@@ -10,13 +10,14 @@
   --sage: #9caa8c;
   --sage-deep: #6e7d5e;
   --sage-soft: #c8d2bd;
-  --terra: #c97954;
-  --terra-deep: #a85c3a;
+  --green: #2d7d4a;
+  --turquoise: #2dd4bf;
   --ink: #3a342c;
   --ink-soft: #5e564a;
   --gold: #d4af37;
   --gold-light: #f4e4a6;
   --gold-deep: #b8860b;
+  --warriors-blue: #1d428a;
   --line: rgba(58, 52, 44, 0.14);
 
   /* Mapped to Tailwind tokens */
@@ -43,9 +44,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Nunito', sans-serif;
-  --font-serif: 'Fraunces', serif;
-  --font-hand: 'Caveat', cursive;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-accent: 'Instrument Sans', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -129,6 +130,163 @@ html {
   position: absolute;
   pointer-events: none;
   animation: drift linear infinite, shimmer ease-in-out infinite;
+}
+
+/* Gold pulse glow for CTA buttons */
+@keyframes gold-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5), 0 0 12px 2px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0), 0 0 28px 8px rgba(212, 175, 55, 0.45);
+  }
+}
+
+.btn-glow {
+  animation: gold-pulse 2.2s ease-in-out infinite;
+}
+
+/* Gold text glow and twinkle animation */
+@keyframes gold-text-glow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.3), 0 0 8px rgba(212, 175, 55, 0.2);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.6), 0 0 24px rgba(212, 175, 55, 0.4), 0 0 36px rgba(212, 175, 55, 0.2);
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes gold-twinkle {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.4);
+  }
+  25% {
+    opacity: 0.9;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6), 0 0 16px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 24px rgba(212, 175, 55, 0.5), 0 0 32px rgba(255, 223, 100, 0.3);
+  }
+  75% {
+    opacity: 0.95;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.5), 0 0 12px rgba(212, 175, 55, 0.3);
+  }
+}
+
+@keyframes gold-dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 2px rgba(212, 175, 55, 0.5), 0 0 6px rgba(212, 175, 55, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.8), 0 0 16px rgba(212, 175, 55, 0.5), 0 0 24px rgba(255, 223, 100, 0.3);
+    transform: scale(1.15);
+  }
+}
+
+.gold-glow {
+  animation: gold-text-glow 3s ease-in-out infinite;
+}
+
+.gold-twinkle {
+  animation: gold-twinkle 2.5s ease-in-out infinite;
+}
+
+.gold-dot {
+  animation: gold-dot-pulse 2s ease-in-out infinite;
+}
+
+/* Gold glitter sparkle animation */
+@keyframes gold-glitter {
+  0%, 100% {
+    text-shadow: 
+      0 0 4px rgba(212, 175, 55, 0.4),
+      2px -2px 6px rgba(255, 255, 255, 0),
+      -3px 1px 6px rgba(255, 223, 100, 0);
+    filter: brightness(1);
+  }
+  10% {
+    text-shadow: 
+      0 0 4px rgba(212, 175, 55, 0.5),
+      4px -4px 8px rgba(255, 255, 255, 0.9),
+      -3px 1px 6px rgba(255, 223, 100, 0);
+  }
+  20% {
+    text-shadow: 
+      0 0 6px rgba(212, 175, 55, 0.6),
+      4px -4px 8px rgba(255, 255, 255, 0),
+      -5px 3px 10px rgba(255, 223, 100, 0.8);
+    filter: brightness(1.1);
+  }
+  35% {
+    text-shadow: 
+      0 0 8px rgba(212, 175, 55, 0.7),
+      6px 2px 12px rgba(255, 255, 255, 0.7),
+      -5px 3px 10px rgba(255, 223, 100, 0);
+  }
+  50% {
+    text-shadow: 
+      0 0 12px rgba(212, 175, 55, 0.8),
+      6px 2px 12px rgba(255, 255, 255, 0),
+      -8px -4px 14px rgba(255, 223, 100, 0.9),
+      3px 5px 8px rgba(255, 255, 255, 0.6);
+    filter: brightness(1.2);
+  }
+  65% {
+    text-shadow: 
+      0 0 8px rgba(212, 175, 55, 0.7),
+      -8px -4px 14px rgba(255, 223, 100, 0),
+      3px 5px 8px rgba(255, 255, 255, 0),
+      -4px 6px 10px rgba(255, 255, 255, 0.8);
+  }
+  80% {
+    text-shadow: 
+      0 0 6px rgba(212, 175, 55, 0.5),
+      -4px 6px 10px rgba(255, 255, 255, 0),
+      7px -3px 12px rgba(255, 223, 100, 0.7);
+    filter: brightness(1.1);
+  }
+  90% {
+    text-shadow: 
+      0 0 4px rgba(212, 175, 55, 0.4),
+      7px -3px 12px rgba(255, 223, 100, 0),
+      -2px -5px 8px rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes sparkle-dot {
+  0%, 100% {
+    box-shadow: 0 0 3px rgba(212, 175, 55, 0.6), 0 0 6px rgba(212, 175, 55, 0.3);
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  25% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(212, 175, 55, 0.6), 0 0 24px rgba(255, 223, 100, 0.4);
+    transform: scale(1.3);
+    filter: brightness(1.4);
+  }
+  50% {
+    box-shadow: 0 0 4px rgba(212, 175, 55, 0.5), 0 0 8px rgba(212, 175, 55, 0.3);
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  75% {
+    box-shadow: 0 0 10px rgba(255, 223, 100, 0.9), 0 0 20px rgba(212, 175, 55, 0.7), 0 0 30px rgba(255, 255, 255, 0.3);
+    transform: scale(1.4);
+    filter: brightness(1.5);
+  }
+}
+
+.gold-glitter {
+  animation: gold-glitter 3s ease-in-out infinite;
+}
+
+.sparkle-dot {
+  animation: sparkle-dot 1.8s ease-in-out infinite;
 }
 
 /* Reveal animation for scroll */

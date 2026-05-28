@@ -5,27 +5,27 @@ export function Story() {
     <section id="story" className="py-20 bg-[#f0e8d8]">
       <div className="max-w-[780px] mx-auto text-center px-7">
         <Reveal>
-          <span className="font-[var(--font-caveat)] text-2xl text-[#c97954] mb-3 block">our story</span>
-          <h2 className="font-[var(--font-fraunces)] text-[clamp(32px,4.5vw,52px)] font-normal leading-tight tracking-tight mb-8 text-balance">
-            A small business with <em className="italic text-[#c97954]">big care</em> for every home we paint.
+          <span className="gold-glitter font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-3 block">our story</span>
+          <h2 className="font-[var(--font-dm-serif)] text-[clamp(32px,4.5vw,52px)] font-normal leading-relaxed tracking-tight mb-8 text-balance">
+            A small business with <em className="gold-glitter text-[#D4AF37]">big care</em> for every home we paint.
           </h2>
           <div className="text-lg leading-relaxed text-[#5e564a] space-y-6">
             <p>
-              I started painting in 2009 with a single truck and a promise: show up when I say I will, ON TIME, do the work right, and treat every house like it&apos;s the only one on my list.
+              I picked up my first paintbrush professionally in 2009. After almost a decade working in the trade, I started Proactive Painting in 2018.
             </p>
             <p>
-              Almost two decades later, that hasn&apos;t changed. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. My standards are high, and our clients tend to stay with us for years.
+              Today it&apos;s a small operation by design. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. Our crew is tight, our standards are high, and our clients tend to come back.
             </p>
             <p>
               If you&apos;re looking for a painting company that responds fast, sticks to the quote, and leaves your home better than they found it — that&apos;s us. I&apos;d love to come see your project.
             </p>
           </div>
           <div className="mt-10 inline-flex flex-col items-center">
-            <div className="font-[var(--font-caveat)] text-[38px] text-[#3a342c] leading-none -rotate-3">
-              — Ray
+            <div className="font-[var(--font-instrument)] text-[38px] text-[#3a342c] leading-none">
+              — Raymond Gil
             </div>
             <div className="text-[13px] tracking-[0.15em] uppercase text-[#5e564a] mt-3">
-              Founder/Owner, Proactive Painting
+              Owner, Proactive Painting
             </div>
           </div>
         </Reveal>

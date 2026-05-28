@@ -1,30 +1,31 @@
 import type { Metadata } from 'next'
-import { Nunito, Fraunces, Caveat } from 'next/font/google'
+import { Inter, DM_Serif_Display, Instrument_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const nunito = Nunito({ 
+const inter = Inter({ 
   subsets: ["latin"],
-  variable: '--font-nunito',
+  variable: '--font-inter',
   display: 'swap',
 })
 
-const fraunces = Fraunces({ 
+const dmSerifDisplay = DM_Serif_Display({ 
   subsets: ["latin"],
-  variable: '--font-fraunces',
+  variable: '--font-dm-serif',
   display: 'swap',
+  weight: '400',
 })
 
-const caveat = Caveat({ 
+const instrumentSans = Instrument_Sans({ 
   subsets: ["latin"],
-  variable: '--font-caveat',
+  variable: '--font-instrument',
   display: 'swap',
-  weight: ['500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
-  title: 'Proactive Painting — A Family Painting Business in San Jose',
-  description: "Hi, I'm Ray. My wife Patty and I have been painting Bay Area homes since 2008. Interior, exterior, and residential painting done right. Licensed CSLB C-33.",
+  title: 'Proactive Painting — Raymond Gil · Bay Area Painting Since 2018',
+  description: "Hi, I'm Raymond Gil. My wife Patty and I have been running Proactive Painting since 2018. Interior, exterior, and residential painting in the Bay Area. Licensed CSLB C-33.",
   generator: 'v0.app',
   icons: {
     icon: [
@@ -51,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-[#f8f3e9]">
-      <body className={`${nunito.variable} ${fraunces.variable} ${caveat.variable} font-sans antialiased`}>
+    <html lang="en" className="bg-[#f8f3e9] scroll-smooth">
+      <body className={`${inter.variable} ${dmSerifDisplay.variable} ${instrumentSans.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

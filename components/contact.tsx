@@ -11,39 +11,60 @@ export function Contact() {
     city: "",
     details: "",
   })
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
+  const [message, setMessage] = useState("")
 
   const handleSubmit = () => {
-    alert("Form needs to be wired up to your email service or Formspree.")
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      setStatus("error")
+      setMessage("Please enter your name and phone number.")
+      return
+    }
+
+    const subject = `New Quote Request from ${formData.name}`
+    const body = [
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email || "Not provided"}`,
+      `Project: ${formData.service}`,
+      `City: ${formData.city || "Not provided"}`,
+      `Details: ${formData.details || "None"}`,
+    ].join("\n")
+
+    window.location.href = `mailto:proactivepaintingsv@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+    setStatus("success")
+    setMessage("Your email app is opening! Hit send and we will get back to you same day.")
+    setFormData({ name: "", phone: "", email: "", service: "Interior", city: "", details: "" })
   }
 
   return (
-    <section id="contact" className="bg-[#6e7d5e] text-[#f8f3e9] py-24 pb-16 relative overflow-hidden">
-      <div className="absolute -top-[150px] -left-[150px] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(201,121,84,0.25),transparent_70%)] rounded-full" />
+    <section id="contact" className="bg-[#1d428a] text-[#f8f3e9] py-24 pb-16 relative overflow-hidden">
+      <div className="absolute -top-[150px] -left-[150px] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(212,175,55,0.25),transparent_70%)] rounded-full" />
 
       <div className="max-w-[1180px] mx-auto px-7 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 relative">
         <div>
-          <span className="font-[var(--font-caveat)] text-2xl text-[#f0c9a8] mb-2 block">get in touch</span>
-          <h2 className="font-[var(--font-fraunces)] text-[clamp(36px,5vw,60px)] leading-tight tracking-tight font-normal mb-6">
+          <span className="font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">get in touch</span>
+          <h2 className="font-[var(--font-dm-serif)] text-[clamp(36px,5vw,60px)] leading-relaxed tracking-tight font-normal mb-6">
             Let&apos;s{" "}
-            <span className="font-[var(--font-caveat)] font-bold text-[#f0c9a8] -rotate-2 inline-block text-[1.05em]">
+            <span className="font-[var(--font-instrument)] font-bold text-[#D4AF37] inline-block text-[1.05em]">
               talk
             </span>{" "}
             about your home.
           </h2>
           <p className="text-[17px] opacity-90 leading-relaxed max-w-[420px] mb-9">
-            Give us a call or send a few details. I&apos;ll personally get back to you within one business day
-            — usually sooner.
+            Give us a call or send a few details. Patty or I will personally get back to you within one business day — usually sooner.
           </p>
 
           <div className="bg-[rgba(248,243,233,0.08)] border border-[rgba(248,243,233,0.2)] rounded-lg p-6 mb-5">
-            <div className="font-[var(--font-caveat)] text-xl text-[#f0c9a8] mb-1">
-              call or text Ray directly
+            <div className="font-[var(--font-instrument)] text-xl text-[#D4AF37] mb-1">
+              call or text Raymond directly
             </div>
             <a
-              href="tel:+14085551234"
-              className="font-[var(--font-fraunces)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#f0c9a8] transition-colors"
+              href="tel:+14085167750"
+              className="font-[var(--font-dm-serif)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#D4AF37] transition-colors"
             >
-              (408) 555-1234
+              (408) 516-7750
             </a>
             <div className="text-sm opacity-70 mt-1">Mon–Sat · 7am–6pm</div>
           </div>
@@ -51,27 +72,27 @@ export function Contact() {
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">Email</span>
             <a
-              href="mailto:llcproactive@gmail.com"
-              className="text-[#f8f3e9] no-underline font-[var(--font-fraunces)] text-lg hover:text-[#f0c9a8] transition-colors"
+              href="mailto:proactivepaintingsv@gmail.com"
+              className="text-[#f8f3e9] no-underline font-[var(--font-dm-serif)] text-lg hover:text-[#D4AF37] transition-colors"
             >
-              llcproactive@gmail.com
+              proactivepaintingsv@gmail.com
             </a>
           </div>
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">Service area</span>
-            <span className="font-[var(--font-fraunces)] text-lg">San Jose &amp; Bay Area</span>
+            <span className="font-[var(--font-dm-serif)] text-lg">San Jose &amp; Bay Area</span>
           </div>
           <div className="flex items-center justify-between py-4 border-t border-[rgba(248,243,233,0.15)]">
             <span className="opacity-70 text-sm">License</span>
-            <span className="font-[var(--font-fraunces)] text-lg">CSLB C-33</span>
+            <span className="font-[var(--font-dm-serif)] text-lg">CSLB 1155142</span>
           </div>
         </div>
 
         <div className="bg-[#f8f3e9] text-[#3a342c] p-10 rounded-lg shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)]">
-          <div className="font-[var(--font-caveat)] text-[22px] text-[#c97954] mb-1.5">
+          <div className="gold-glitter font-[var(--font-instrument)] text-[22px] text-[#D4AF37] mb-1.5">
             tell us about your project
           </div>
-          <div className="font-[var(--font-fraunces)] text-[26px] font-medium mb-7 tracking-tight">
+          <div className="font-[var(--font-dm-serif)] text-[26px] font-medium mb-7 tracking-tight">
             Request a free quote
           </div>
 
@@ -82,7 +103,7 @@ export function Contact() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all"
+                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all"
               />
             </div>
             <div>
@@ -91,7 +112,7 @@ export function Contact() {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all"
+                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all"
               />
             </div>
           </div>
@@ -102,7 +123,7 @@ export function Contact() {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all"
+              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all"
             />
           </div>
 
@@ -114,7 +135,7 @@ export function Contact() {
               <select
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all"
+                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all"
               >
                 <option>Interior</option>
                 <option>Exterior</option>
@@ -129,7 +150,7 @@ export function Contact() {
                 placeholder="San Jose, etc."
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all placeholder:text-[#5e564a]/50"
+                className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all placeholder:text-[#5e564a]/50"
               />
             </div>
           </div>
@@ -142,20 +163,27 @@ export function Contact() {
               placeholder="Rooms, timeline, anything we should know."
               value={formData.details}
               onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#c97954] focus:bg-[#f8f3e9] transition-all resize-y min-h-[90px] placeholder:text-[#5e564a]/50"
+              className="w-full bg-[#f0e8d8] border border-transparent text-[#3a342c] px-4 py-3 text-[15px] rounded-md focus:outline-none focus:border-[#D4AF37] focus:bg-[#f8f3e9] transition-all resize-y min-h-[90px] placeholder:text-[#5e564a]/50"
             />
           </div>
 
           <button
             type="button"
             onClick={handleSubmit}
-            className="w-full bg-[#c97954] text-[#f8f3e9] border-none py-4 text-base font-bold cursor-pointer mt-2 rounded-full hover:bg-[#a85c3a] hover:-translate-y-0.5 transition-all"
+            className="btn-glow w-full bg-[#D4AF37] text-[#f8f3e9] border-none py-4 text-base font-bold cursor-pointer mt-2 rounded-full hover:bg-[#b8922f] hover:-translate-y-0.5 transition-all"
           >
             Send it →
           </button>
-          <p className="font-[var(--font-caveat)] text-[17px] text-[#6e7d5e] mt-4 text-center">
-            we usually reply same day
-          </p>
+          {message && (
+            <p className={`text-[15px] mt-4 text-center ${status === "success" ? "text-[#2D7D4A]" : "text-red-600"}`}>
+              {message}
+            </p>
+          )}
+          {status !== "success" && (
+            <p className="font-[var(--font-instrument)] text-[17px] text-[#D4AF37] mt-4 text-center">
+              we usually reply same day
+            </p>
+          )}
         </div>
       </div>
     </section>
