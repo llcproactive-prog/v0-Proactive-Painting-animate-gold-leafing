@@ -13,7 +13,7 @@ export function Hero() {
             </span>
             <h1 className="font-[var(--font-dm-serif)] text-[clamp(38px,6.5vw,88px)] leading-[1.02] tracking-tight font-normal mb-6 md:mb-7 text-[#3a342c]">
               A{" "}
-              <span className="font-[var(--font-instrument)] font-bold text-[#2D7D4A] text-[1.08em] inline-block mx-1">
+              <span className="font-[var(--font-instrument)] font-bold text-[#1d428a] text-[1.08em] inline-block mx-1">
                 family
               </span>{" "}
               painting business, taking care of{" "}
@@ -31,7 +31,7 @@ export function Hero() {
                 Get a Free Quote →
               </Link>
               <div className="flex flex-col gap-0.5">
-                <span className="font-[var(--font-instrument)] text-[18px] text-[#2D7D4A]">or call us</span>
+                <span className="font-[var(--font-instrument)] text-[18px] text-[#1d428a]">or call us</span>
                 <a
                   href="tel:+14085167750"
                   className="font-[var(--font-dm-serif)] text-[28px] font-medium text-[#3a342c] no-underline tracking-tight hover:text-[#1d428a] transition-colors"

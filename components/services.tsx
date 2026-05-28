@@ -87,7 +87,7 @@ const services = [
     title: "Residential",
     description:
       "Whole-home repaints, single rooms, accent walls, color consultation. We'll help you pick colors you'll love living with.",
-    gradient: "from-[#d4af37] via-[#2d7d4a] to-[#2dd4bf]",
+    gradient: "from-[#d4af37] via-[#1d428a] to-[#1d428a]",
     type: "gradient",
   },
 ]
@@ -99,7 +99,7 @@ export function Services() {
         <Reveal className="text-center mb-12">
           <span className="gold-glitter font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">what we do</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
-            Three things, done <em className="text-[#2D7D4A]">well.</em>
+            Three things, done <em className="text-[#1d428a]">well.</em>
           </h2>
         </Reveal>
 

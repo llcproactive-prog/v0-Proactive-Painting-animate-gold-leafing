@@ -57,7 +57,7 @@ export function Contact() {
           </p>
 
           <div className="bg-[rgba(248,243,233,0.08)] border border-[rgba(248,243,233,0.2)] rounded-lg p-6 mb-5">
-            <div className="font-[var(--font-instrument)] text-xl text-[#2DD4BF] mb-1">
+            <div className="font-[var(--font-instrument)] text-xl text-[#D4AF37] mb-1">
               call or text Raymond directly
             </div>
             <a

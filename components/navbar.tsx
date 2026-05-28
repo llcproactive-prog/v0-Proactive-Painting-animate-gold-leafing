@@ -19,7 +19,7 @@ export function Navbar() {
       <div className="max-w-[1180px] mx-auto px-7 flex items-center justify-between">
         {/* Logo */}
         <Link href="#" className="flex items-center gap-3.5 no-underline">
-          <span className="w-11 h-11 bg-[#2D7D4A] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-medium text-[22px] rounded-full italic">
+          <span className="w-11 h-11 bg-[#1d428a] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-medium text-[22px] rounded-full italic">
             P
           </span>
           <span className="flex flex-col leading-none">
