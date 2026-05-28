@@ -14,7 +14,7 @@ export function Story() {
               I picked up my first paintbrush professionally in 2009. After almost a decade working in the trade, I started Proactive Painting in 2018.
             </p>
             <p>
-              Today it&apos;s a small operation by design. My wife Patty handles scheduling and the back office — she&apos;s usually the first voice you&apos;ll hear. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. Our crew is tight, our standards are high, and our clients tend to come back.
+              Today it&apos;s a small operation by design. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. Our crew is tight, our standards are high, and our clients tend to come back.
             </p>
             <p>
               If you&apos;re looking for a painting company that responds fast, sticks to the quote, and leaves your home better than they found it — that&apos;s us. I&apos;d love to come see your project.

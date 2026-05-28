@@ -20,7 +20,7 @@ export function Hero() {
               <em className="gold-glitter font-light text-[#D4AF37]">Bay Area homes</em> since 2018.
             </h1>
             <p className="text-[16px] md:text-[19px] leading-relaxed text-[#5e564a] max-w-[500px] mb-7 md:mb-9">
-              I&apos;ve been painting Bay Area homes since 2009, and running Proactive Painting since 2018. My wife Patty handles scheduling and keeps everything organized — when you call, you&apos;ll usually get her first, then me. No call centers, no salespeople. Just careful work on interior, exterior, and residential projects, done the way I&apos;d paint my own home.
+              I&apos;ve been painting Bay Area homes since 2009, and running Proactive Painting since 2018. No call centers, no salespeople. Just careful work on interior, exterior, and residential projects, done the way I&apos;d paint my own home.
             </p>
 
             <div className="flex gap-4 items-center flex-wrap">
