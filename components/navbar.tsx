@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,14 +16,18 @@ export function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 bg-[#f8f3e9]/95 backdrop-blur-md z-50 py-5 border-b border-[rgba(58,52,44,0.14)]">
+    <nav className="sticky top-0 bg-[#f8f3e9]/95 backdrop-blur-md z-50 py-3 border-b border-[rgba(58,52,44,0.14)]">
       <div className="max-w-[1180px] mx-auto px-7 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-3.5 no-underline">
-          <span className="w-11 h-11 bg-[#1d428a] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-medium text-[22px] rounded-full italic">
-            P
-          </span>
-          <span className="flex flex-col leading-none">
+        <Link href="#" className="flex items-center gap-3 no-underline">
+          <Image
+            src="/images/logo.png"
+            alt="Proactive Painting"
+            width={70}
+            height={70}
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] object-contain"
+          />
+          <span className="hidden sm:flex flex-col leading-none">
             <span className="font-[var(--font-dm-serif)] text-xl font-medium text-[#3a342c] tracking-tight">
               Proactive Painting
             </span>
