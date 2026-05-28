@@ -35,6 +35,12 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">
           <Link
+            href="/about"
+            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#1d428a] transition-colors"
+          >
+            About
+          </Link>
+          <Link
             href="#story"
             className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#1d428a] transition-colors"
           >
@@ -102,7 +108,7 @@ export function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div 
         className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          isOpen ? "max-h-[350px] opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-[#f8f3e9] border-t border-[rgba(58,52,44,0.14)] px-7 py-4 flex flex-col gap-1">
@@ -112,6 +118,13 @@ export function Navbar() {
             className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Home
+          </Link>
+          <Link
+            href="/about"
+            onClick={closeMenu}
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#1d428a] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
+          >
+            About
           </Link>
           <Link
             href="#story"
@@ -144,7 +157,7 @@ export function Navbar() {
           <Link
             href="tel:+14085167750"
             onClick={closeMenu}
-            className="text-[#2D7D4A] no-underline text-[16px] font-semibold py-3 mt-2"
+            className="text-[#1d428a] no-underline text-[16px] font-semibold py-3 mt-2"
           >
             Call: (408) 516-7750
           </Link>
