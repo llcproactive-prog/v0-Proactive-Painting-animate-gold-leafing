@@ -31,41 +31,78 @@ export default function AboutPage() {
 
       {/* Story Body */}
       <section className="py-20 px-7">
-        <div className="max-w-[720px] mx-auto">
+        <div className="max-w-[820px] mx-auto">
+
+          {/* Opening hook */}
+          <div className="mb-16">
+            <p className="font-[var(--font-dm-serif)] text-[clamp(28px,4vw,42px)] text-[#3a342c] leading-[1.3] font-normal">
+              In 2009, I was just a kid with a paintbrush.
+            </p>
+            <p className="font-[var(--font-dm-serif)] text-[clamp(28px,4vw,42px)] text-[#3a342c] leading-[1.3] font-normal mt-4">
+              By 2018, I&apos;d been through enough to know{" "}
+              <em className="gold-glitter text-[#D4AF37]">exactly what kind of man I wanted to be.</em>
+            </p>
+          </div>
 
           {/* Pull quote */}
-          <blockquote className="border-l-4 border-[#D4AF37] pl-7 mb-14">
-            <p className="font-[var(--font-dm-serif)] text-[clamp(22px,3vw,30px)] text-[#3a342c] leading-relaxed italic font-normal">
-              &ldquo;I&apos;ve had a journey. Faced hard things, rebuilt my life, and now run this business with my wife Patty with a level of care that comes from knowing what matters.&rdquo;
+          <blockquote className="bg-[#1d428a] text-[#f8f3e9] rounded-2xl p-10 mb-16 relative overflow-hidden">
+            <div className="absolute top-4 left-6 font-[var(--font-dm-serif)] text-[120px] text-[#D4AF37]/20 leading-none">&ldquo;</div>
+            <p className="font-[var(--font-dm-serif)] text-[clamp(20px,3vw,26px)] leading-relaxed italic font-normal relative z-10">
+              I&apos;ve faced hard things. Rebuilt my life from scratch. And now I run this business with my wife Patty — with a level of care that only comes from knowing what really matters.
             </p>
-            <footer className="mt-4 font-[var(--font-instrument)] text-[15px] text-[#5e564a] tracking-wide uppercase not-italic">
-              — Raymond Gil, Owner
+            <footer className="mt-6 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#1d428a] grid place-items-center font-[var(--font-dm-serif)] font-bold text-xl">R</div>
+              <div>
+                <div className="font-[var(--font-dm-serif)] text-[18px]">Raymond Gil</div>
+                <div className="font-[var(--font-instrument)] text-[13px] text-[#D4AF37]">Owner, Proactive Painting</div>
+              </div>
             </footer>
           </blockquote>
 
-          {/* Body text */}
-          <div className="text-[18px] leading-relaxed text-[#5e564a] space-y-7 font-[var(--font-instrument)]">
-            <p>
-              I picked up my first paintbrush professionally in 2009. I was young, learning the trade, figuring out who I was. The years that followed weren&apos;t always easy — but they shaped the way I work and the way I treat people.
+          {/* Body text with emphasis */}
+          <div className="text-[18px] leading-[1.8] text-[#5e564a] space-y-8">
+            <p className="text-[20px] text-[#3a342c] font-medium">
+              The years between 2009 and 2018 weren&apos;t always easy. But they shaped something in me — a standard I refuse to break.
             </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 py-8">
+              <div className="text-center p-6 rounded-xl bg-[#f5f1e7]">
+                <div className="gold-glitter font-[var(--font-dm-serif)] text-[28px] text-[#D4AF37] mb-2">Show up</div>
+                <div className="text-[14px] text-[#5e564a]">When I say I will. Every single time.</div>
+              </div>
+              <div className="text-center p-6 rounded-xl bg-[#f5f1e7]">
+                <div className="gold-glitter font-[var(--font-dm-serif)] text-[28px] text-[#D4AF37] mb-2">Do it right</div>
+                <div className="text-[14px] text-[#5e564a]">No shortcuts. No excuses.</div>
+              </div>
+              <div className="text-center p-6 rounded-xl bg-[#f5f1e7]">
+                <div className="gold-glitter font-[var(--font-dm-serif)] text-[28px] text-[#D4AF37] mb-2">Earn trust</div>
+                <div className="text-[14px] text-[#5e564a]">One house at a time.</div>
+              </div>
+            </div>
+
             <p>
-              When I started Proactive Painting in 2018, it wasn&apos;t just a business decision. It was a commitment. To showing up. To doing the work right. To building something I could be proud of alongside my wife Patty and our family.
+              <strong className="text-[#3a342c]">Patty is my partner in everything.</strong> She runs the back office — scheduling, follow-ups, making sure every client feels taken care of from the very first call. When you phone us, she&apos;s usually the one who answers. Then you get me.
             </p>
+            
             <p>
-              Patty runs the back office — she handles scheduling, follow-ups, and makes sure every client feels taken care of from the first call. I&apos;m in the field every day, on the ladder, walking every job before we start and after we finish.
+              I&apos;m in the field every day. On the ladder. Walking every job before we start and after we finish. This isn&apos;t a company where you talk to a salesman and never see him again.
             </p>
-            <p>
-              When you hire Proactive Painting, you&apos;re not handing your home over to a crew you&apos;ve never met. You&apos;re hiring a family that has earned the right to be trusted — one house at a time, one honest job at a time.
+
+            <p className="text-[22px] text-[#3a342c] font-[var(--font-dm-serif)] italic border-l-4 border-[#D4AF37] pl-6 my-10">
+              When you hire Proactive Painting, you&apos;re not handing your home over to strangers. You&apos;re hiring a family that has earned the right to be trusted.
             </p>
           </div>
 
           {/* Signature */}
-          <div className="mt-14 pt-10 border-t border-[rgba(58,52,44,0.14)] flex flex-col items-start">
-            <div className="font-[var(--font-dm-serif)] text-[42px] text-[#3a342c] leading-none italic">
-              Raymond Gil
-            </div>
-            <div className="text-[13px] tracking-[0.15em] uppercase text-[#5e564a] mt-3 font-[var(--font-instrument)]">
-              Owner · Proactive Painting · Est. 2018
+          <div className="mt-16 pt-10 border-t border-[rgba(58,52,44,0.14)] flex items-center gap-6">
+            <div className="w-20 h-20 rounded-full bg-[#1d428a] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-bold text-3xl italic">R</div>
+            <div>
+              <div className="font-[var(--font-dm-serif)] text-[36px] text-[#3a342c] leading-none italic">
+                Raymond Gil
+              </div>
+              <div className="text-[13px] tracking-[0.15em] uppercase text-[#5e564a] mt-2 font-[var(--font-instrument)]">
+                Owner · Proactive Painting · Est. 2018
+              </div>
             </div>
           </div>
         </div>
