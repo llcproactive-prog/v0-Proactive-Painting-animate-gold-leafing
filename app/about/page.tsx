@@ -48,7 +48,7 @@ export default function AboutPage() {
             </p>
 
             <p className="text-[22px] text-[#3a342c] font-[var(--font-dm-serif)] italic border-l-4 border-[#D4AF37] pl-6 my-10 leading-relaxed">
-              My wife Patty and I run this business together now. No call centers, no shortcuts. Just honest work, done with care, by people who don&apos;t take a second chance for granted.
+              My wife Patty and I run this business together. No call centers, no shortcuts. Just honest work, done with care, by people who don&apos;t take a second chance for granted.
             </p>
           </div>
 
