@@ -11,7 +11,7 @@ export function Story() {
           </h2>
           <div className="text-lg leading-relaxed text-[#5e564a] space-y-6">
             <p>
-              I picked up my first paintbrush professionally in 2009. After almost a decade working in the trade, I started Proactive Painting in 2018 with a single truck and a promise: show up when I say I will, do the work right, and treat every house like it&apos;s the only one on my list.
+              I picked up my first paintbrush professionally in 2009. After almost a decade working in the trade, I started Proactive Painting in 2018.
             </p>
             <p>
               Today it&apos;s a small operation by design. My wife Patty handles scheduling and the back office — she&apos;s usually the first voice you&apos;ll hear. I&apos;m the one in the field, on the ladder, walking every job before we start and after we finish. Our crew is tight, our standards are high, and our clients tend to come back.
