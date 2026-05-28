@@ -81,7 +81,7 @@ export default function AboutPage() {
             </div>
 
             <p>
-              <strong className="text-[#3a342c]">Patty is my partner in everything.</strong> She runs the back office — scheduling, follow-ups, making sure every client feels taken care of from the very first call. When you phone us, she&apos;s usually the one who answers. Then you get me.
+              Patty keeps things running. She&apos;s the other half of this whole thing — I&apos;m not painting alone. But that&apos;s what we do differently. I&apos;m not some guy you hire through an app and never see again. I walk every job myself. Before we start. After we finish. And a lot during.
             </p>
             
             <p>
