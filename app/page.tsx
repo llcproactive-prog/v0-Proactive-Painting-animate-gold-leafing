@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
+import { TrustBadges } from "@/components/trust-badges"
 import { Story } from "@/components/story"
 import { Services } from "@/components/services"
 import { Gallery } from "@/components/gallery"
@@ -13,6 +14,7 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <TrustBadges />
         <Story />
         <Services />
         <Gallery />
