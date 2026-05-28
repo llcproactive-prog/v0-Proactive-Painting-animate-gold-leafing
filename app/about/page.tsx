@@ -33,63 +33,22 @@ export default function AboutPage() {
       <section className="py-20 px-7">
         <div className="max-w-[820px] mx-auto">
 
-          {/* Opening hook */}
-          <div className="mb-16">
-            <p className="font-[var(--font-dm-serif)] text-[clamp(28px,4vw,42px)] text-[#3a342c] leading-[1.3] font-normal">
-              In 2009, I was just a kid with a paintbrush.
+          {/* Main narrative */}
+          <div className="text-[18px] leading-[1.9] text-[#5e564a] space-y-8 font-[var(--font-instrument)]">
+            <p>
+              I&apos;ve been painting Bay Area homes since 2009, but the real story started earlier. I went through some deep struggles — the kind that change you, the kind that strip everything down and force you to rebuild from the ground up. For a while, I didn&apos;t know if I&apos;d find my footing again.
             </p>
-            <p className="font-[var(--font-dm-serif)] text-[clamp(28px,4vw,42px)] text-[#3a342c] leading-[1.3] font-normal mt-4">
-              By 2018, I&apos;d been through enough to know{" "}
-              <em className="gold-glitter text-[#D4AF37]">exactly what kind of man I wanted to be.</em>
-            </p>
-          </div>
-
-          {/* Pull quote */}
-          <blockquote className="bg-[#1d428a] text-[#f8f3e9] rounded-2xl p-10 mb-16 relative overflow-hidden">
-            <div className="absolute top-4 left-6 font-[var(--font-dm-serif)] text-[120px] text-[#D4AF37]/20 leading-none">&ldquo;</div>
-            <p className="font-[var(--font-dm-serif)] text-[clamp(20px,3vw,26px)] leading-relaxed italic font-normal relative z-10">
-              I&apos;ve faced hard things. Rebuilt my life from scratch. And now I run this business with my wife Patty — with a level of care that only comes from knowing what really matters.
-            </p>
-            <footer className="mt-6 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#1d428a] grid place-items-center font-[var(--font-dm-serif)] font-bold text-xl">R</div>
-              <div>
-                <div className="font-[var(--font-dm-serif)] text-[18px]">Raymond Gil</div>
-                <div className="font-[var(--font-instrument)] text-[13px] text-[#D4AF37]">Owner, Proactive Painting</div>
-              </div>
-            </footer>
-          </blockquote>
-
-          {/* Body text with emphasis */}
-          <div className="text-[18px] leading-[1.8] text-[#5e564a] space-y-8">
-            <p className="text-[20px] text-[#3a342c] font-medium">
-              The years between 2009 and 2018 weren&apos;t always easy. But they shaped something in me — a standard I refuse to break.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 py-8">
-              <div className="text-center p-6 rounded-xl bg-[#f5f1e7]">
-                <div className="gold-glitter font-[var(--font-dm-serif)] text-[28px] text-[#D4AF37] mb-2">Show up</div>
-                <div className="text-[14px] text-[#5e564a]">When I say I will. Every single time.</div>
-              </div>
-              <div className="text-center p-6 rounded-xl bg-[#f5f1e7]">
-                <div className="gold-glitter font-[var(--font-dm-serif)] text-[28px] text-[#D4AF37] mb-2">Do it right</div>
-                <div className="text-[14px] text-[#5e564a]">No shortcuts. No excuses.</div>
-              </div>
-              <div className="text-center p-6 rounded-xl bg-[#f5f1e7]">
-                <div className="gold-glitter font-[var(--font-dm-serif)] text-[28px] text-[#D4AF37] mb-2">Earn trust</div>
-                <div className="text-[14px] text-[#5e564a]">One house at a time.</div>
-              </div>
-            </div>
 
             <p>
-              Patty keeps things running. She&apos;s the other half of this whole thing — I&apos;m not painting alone. But that&apos;s what we do differently. I&apos;m not some guy you hire through an app and never see again. I walk every job myself. Before we start. After we finish. And a lot during.
-            </p>
-            
-            <p>
-              I&apos;m in the field every day. On the ladder. Walking every job before we start and after we finish. This isn&apos;t a company where you talk to a salesman and never see him again.
+              Painting became part of how I did. There&apos;s something steadying about careful work — taping a clean line, prepping a surface right, leaving a home better than you found it. It gave me structure when I needed it, and over time it became more than a job. It became a way to show up in the world with integrity.
             </p>
 
-            <p className="text-[22px] text-[#3a342c] font-[var(--font-dm-serif)] italic border-l-4 border-[#D4AF37] pl-6 my-10">
-              When you hire Proactive Painting, you&apos;re not handing your home over to strangers. You&apos;re hiring a family that has earned the right to be trusted.
+            <p>
+              Coming out the other side taught me discipline, gratitude, and the value of doing things right the first time. It taught me that how you do anything is how you do everything. That&apos;s why today, I walk every job personally, I stand behind the work, and I treat every home like it matters — because I know what it means to rebuild something and get it right.
+            </p>
+
+            <p className="text-[22px] text-[#3a342c] font-[var(--font-dm-serif)] italic border-l-4 border-[#D4AF37] pl-6 my-10 leading-relaxed">
+              My wife Patty and I run this business together now. No call centers, no shortcuts. Just honest work, done with care, by people who don&apos;t take a second chance for granted.
             </p>
           </div>
 
