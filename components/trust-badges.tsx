@@ -53,21 +53,21 @@ const badges = [
 
 export function TrustBadges() {
   return (
-    <section className="py-10 bg-[#f8f3e9]">
+    <section className="py-12 bg-[#f8f3e9]">
       <div className="max-w-[1180px] mx-auto px-7">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {badges.map((badge) => (
             <div
               key={badge.top}
-              className="group flex flex-col items-center justify-center gap-3 py-7 px-4 rounded-2xl border border-[rgba(212,175,55,0.25)] bg-[rgba(212,175,55,0.05)] hover:bg-[rgba(212,175,55,0.1)] hover:border-[rgba(212,175,55,0.5)] transition-all duration-300 cursor-default"
+              className="group flex flex-col items-center justify-center gap-3 py-8 px-4 rounded-2xl border border-[#D4AF37]/30 bg-[#faf7f0] hover:bg-[#f5f1e7] hover:border-[#D4AF37]/60 transition-all duration-300 cursor-default shadow-sm hover:shadow-md"
             >
               {/* Outer ring */}
               <div
-                className="relative flex items-center justify-center w-20 h-20 rounded-full border-2 border-[rgba(212,175,55,0.4)] group-hover:border-[#D4AF37] transition-all duration-300"
+                className="relative flex items-center justify-center w-20 h-20 rounded-full border-2 border-[#D4AF37]/50 group-hover:border-[#D4AF37] transition-all duration-300"
                 style={{ animationDelay: badge.delay }}
               >
                 {/* Inner ring */}
-                <div className="absolute inset-2 rounded-full border border-[rgba(212,175,55,0.25)] group-hover:border-[rgba(212,175,55,0.5)] transition-all duration-300" />
+                <div className="absolute inset-2 rounded-full border border-[#D4AF37]/25 group-hover:border-[#D4AF37]/50 transition-all duration-300" />
                 {/* Corner sparkles */}
                 <span
                   className="sparkle-dot absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#D4AF37] rounded-full"
@@ -85,10 +85,10 @@ export function TrustBadges() {
 
               {/* Text */}
               <div className="text-center">
-                <div className="gold-glitter font-[var(--font-dm-serif)] text-[17px] text-[#D4AF37] leading-tight">
+                <div className="gold-glitter font-[var(--font-dm-serif)] text-[16px] text-[#B8922F] leading-tight font-semibold">
                   {badge.top}
                 </div>
-                <div className="text-[13px] font-semibold text-[#5e564a] tracking-wide uppercase mt-0.5">
+                <div className="text-[12px] font-bold text-[#3a342c] tracking-wide uppercase mt-1">
                   {badge.bottom}
                 </div>
               </div>
