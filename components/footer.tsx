@@ -14,19 +14,19 @@ export function Footer() {
           <div className="font-[var(--font-instrument)] text-[#2DD4BF] text-xl mb-3">Get in touch</div>
           <a
             href="tel:+14085167750"
-            className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#2DD4BF] transition-colors"
+            className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#D4AF37] transition-colors"
           >
             (408) 516-7750
           </a>
           <a
             href="mailto:proactivepaintingsv@gmail.com"
-            className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#2DD4BF] transition-colors"
+            className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#D4AF37] transition-colors"
           >
             proactivepaintingsv@gmail.com
           </a>
           <Link
             href="#contact"
-            className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#2DD4BF] transition-colors"
+            className="text-[rgba(248,243,233,0.7)] no-underline block mb-1.5 hover:text-[#D4AF37] transition-colors"
           >
             Free quote
           </Link>

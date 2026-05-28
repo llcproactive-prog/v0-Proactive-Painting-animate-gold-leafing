@@ -108,7 +108,7 @@ export function Services() {
             <Reveal key={service.title} delay={i * 100}>
               <Link
                 href="#contact"
-                className="bg-[#f8f3e9] border border-[rgba(58,52,44,0.14)] rounded-lg p-8 no-underline text-[#3a342c] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(58,52,44,0.2)] hover:border-[#2D7D4A] group"
+                className="bg-[#f8f3e9] border border-[rgba(58,52,44,0.14)] rounded-lg p-8 no-underline text-[#3a342c] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(58,52,44,0.2)] hover:border-[#1d428a] group"
               >
                 <div className="aspect-[4/3] rounded mb-6 relative overflow-hidden">
                   {service.type === "slider" ? (

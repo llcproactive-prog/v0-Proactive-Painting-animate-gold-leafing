@@ -36,25 +36,25 @@ export function Navbar() {
         <div className="hidden md:flex gap-8 items-center">
           <Link
             href="#story"
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors"
+            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#1d428a] transition-colors"
           >
             Our Story
           </Link>
           <Link
             href="#services"
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors"
+            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#1d428a] transition-colors"
           >
             Services
           </Link>
           <Link
             href="#work"
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors"
+            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#1d428a] transition-colors"
           >
             Work
           </Link>
           <Link
             href="#reviews"
-            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#D4AF37] transition-colors"
+            className="text-[#5e564a] no-underline text-[15px] font-medium hover:text-[#1d428a] transition-colors"
           >
             Reviews
           </Link>
@@ -116,28 +116,28 @@ export function Navbar() {
           <Link
             href="#story"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#1d428a] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Our Story
           </Link>
           <Link
             href="#services"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#1d428a] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Services
           </Link>
           <Link
             href="#work"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#1d428a] transition-colors py-3 border-b border-[rgba(58,52,44,0.08)]"
           >
             Work
           </Link>
           <Link
             href="#reviews"
             onClick={closeMenu}
-            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#D4AF37] transition-colors py-3"
+            className="text-[#5e564a] no-underline text-[16px] font-medium hover:text-[#1d428a] transition-colors py-3"
           >
             Reviews
           </Link>

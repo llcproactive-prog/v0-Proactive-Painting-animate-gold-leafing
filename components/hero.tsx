@@ -34,7 +34,7 @@ export function Hero() {
                 <span className="font-[var(--font-instrument)] text-[18px] text-[#2D7D4A]">or call us</span>
                 <a
                   href="tel:+14085167750"
-                  className="font-[var(--font-dm-serif)] text-[28px] font-medium text-[#3a342c] no-underline tracking-tight hover:text-[#D4AF37] transition-colors"
+                  className="font-[var(--font-dm-serif)] text-[28px] font-medium text-[#3a342c] no-underline tracking-tight hover:text-[#1d428a] transition-colors"
                 >
                   (408) 516-7750
                 </a>

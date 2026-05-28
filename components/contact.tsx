@@ -62,7 +62,7 @@ export function Contact() {
             </div>
             <a
               href="tel:+14085167750"
-              className="font-[var(--font-dm-serif)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#2DD4BF] transition-colors"
+              className="font-[var(--font-dm-serif)] text-4xl text-[#f8f3e9] no-underline tracking-tight block hover:text-[#D4AF37] transition-colors"
             >
               (408) 516-7750
             </a>
@@ -73,7 +73,7 @@ export function Contact() {
             <span className="opacity-70 text-sm">Email</span>
             <a
               href="mailto:proactivepaintingsv@gmail.com"
-              className="text-[#f8f3e9] no-underline font-[var(--font-dm-serif)] text-lg hover:text-[#2DD4BF] transition-colors"
+              className="text-[#f8f3e9] no-underline font-[var(--font-dm-serif)] text-lg hover:text-[#D4AF37] transition-colors"
             >
               proactivepaintingsv@gmail.com
             </a>
