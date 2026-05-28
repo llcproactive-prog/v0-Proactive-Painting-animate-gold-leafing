@@ -85,7 +85,7 @@ export function Reviews() {
         <Reveal className="text-center mb-14">
           <span className="gold-glitter font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">kind words</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-tight text-balance">
-            From our <em className="text-[#2D7D4A]">neighbors.</em>
+            From our <em className="text-[#1d428a]">neighbors.</em>
           </h2>
           {/* Google rating summary */}
           <div className="flex items-center justify-center gap-3 mt-5">
@@ -119,7 +119,7 @@ export function Reviews() {
               </p>
               <div className="flex items-center justify-between pt-4 border-t border-[rgba(58,52,44,0.1)]">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#2D7D4A] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-medium text-base shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#1d428a] text-[#f8f3e9] grid place-items-center font-[var(--font-dm-serif)] font-medium text-base shrink-0">
                     {review.initial}
                   </div>
                   <div>

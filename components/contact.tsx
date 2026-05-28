@@ -39,15 +39,15 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#2D7D4A] text-[#f8f3e9] py-24 pb-16 relative overflow-hidden">
+    <section id="contact" className="bg-[#1d428a] text-[#f8f3e9] py-24 pb-16 relative overflow-hidden">
       <div className="absolute -top-[150px] -left-[150px] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(212,175,55,0.25),transparent_70%)] rounded-full" />
 
       <div className="max-w-[1180px] mx-auto px-7 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 relative">
         <div>
-          <span className="font-[var(--font-instrument)] text-2xl text-[#2DD4BF] mb-2 block">get in touch</span>
+          <span className="font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-2 block">get in touch</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(36px,5vw,60px)] leading-relaxed tracking-tight font-normal mb-6">
             Let&apos;s{" "}
-            <span className="font-[var(--font-instrument)] font-bold text-[#2DD4BF] inline-block text-[1.05em]">
+            <span className="font-[var(--font-instrument)] font-bold text-[#D4AF37] inline-block text-[1.05em]">
               talk
             </span>{" "}
             about your home.
@@ -180,7 +180,7 @@ export function Contact() {
             </p>
           )}
           {status !== "success" && (
-            <p className="font-[var(--font-instrument)] text-[17px] text-[#2DD4BF] mt-4 text-center">
+            <p className="font-[var(--font-instrument)] text-[17px] text-[#D4AF37] mt-4 text-center">
               we usually reply same day
             </p>
           )}

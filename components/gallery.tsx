@@ -145,7 +145,7 @@ export function Gallery() {
         <Reveal className="text-center mb-10">
           <span className="gold-glitter font-[var(--font-instrument)] text-2xl text-[#D4AF37] mb-1 block">recent work</span>
           <h2 className="font-[var(--font-dm-serif)] text-[clamp(34px,5vw,58px)] font-normal leading-relaxed tracking-wide text-balance">
-            A few <em className="text-[#2D7D4A]">homes</em>&nbsp;we&apos;ve loved.
+            A few <em className="text-[#1d428a]">homes</em>&nbsp;we&apos;ve loved.
           </h2>
         </Reveal>
 
